@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { galleryAssets, pageContent, selectedAssets, siteMeta } from '../data/site';
+
+const home = pageContent.home;
+---
+
+<Layout
+  title={home.title}
+  description={home.description}
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">{home.eyebrow}</p>
+        <h1 data-draft-field="home.heroTitle">{home.heroTitle}</h1>
+        <p data-draft-field="home.heroBody">{home.heroBody}</p>
+        <div class="button-group">
+          <a class="button" href={home.heroPrimaryCtaHref} data-draft-href="business.phoneHref">{home.heroPrimaryCtaLabel}</a>
+          <a class="button secondary" href={home.heroSecondaryCtaHref}>{home.heroSecondaryCtaLabel}</a>
+        </div>
+      </div>
+
+      <div class="hero-media card-image-wrap hero-media-large">
+        <img src={selectedAssets.heroPrimary.src} alt={selectedAssets.heroPrimary.alt} data-draft-image="heroPrimary" />
+        <div class="overlay-note">대표 침대 쇼룸 이미지</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <h2>{home.aboutTitle}</h2>
+        <p>{home.aboutBody}</p>
+      </div>
+      <div class="info-box">
+        <h3>{home.infoTitle}</h3>
+        <ul class="simple-list">
+          <li>주소: <span data-draft-field="business.address">{siteMeta.address}</span></li>
+          <li>운영시간: <span data-draft-field="business.hours">{siteMeta.hours}</span></li>
+          <li>대표번호: <span data-draft-field="business.phone">{siteMeta.phone}</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <h2>{home.strengthTitle}</h2>
+      <div class="grid-4">
+        {home.strengths.map((item) => <article class="card"><h3>{item.title}</h3><p>{item.body}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>{home.galleryTitle}</h2>
+      <p class="note">{home.galleryNote}</p>
+      <div class="grid-4 gallery-grid" style="margin-top:1.5rem;">
+        {galleryAssets.slice(0, 4).map((asset) => (
+          <article class="gallery-card">
+            <div class="card-image-wrap">
+              <img src={asset.src} alt={asset.alt} />
+            </div>
+            <div class="gallery-copy">
+              <strong>{asset.title}</strong>
+              <span>{asset.category}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container two-column">
+      <div>
+        <h2>{home.visitTitle}</h2>
+        <p>{home.visitBody}</p>
+        <div class="button-group">
+          <a class="button" href={home.visitPrimaryCtaHref}>{home.visitPrimaryCtaLabel}</a>
+          <a class="button secondary" href={home.visitSecondaryCtaHref} target="_blank" rel="noreferrer">{home.visitSecondaryCtaLabel}</a>
+        </div>
+      </div>
+      <div class="card-image-wrap hero-media-small">
+        <img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} data-draft-image="storeView" />
+        <div class="overlay-note">매장 외관 대표 이미지</div>
+      </div>
+    </div>
+  </section>
+</Layout>

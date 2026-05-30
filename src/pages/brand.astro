@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { galleryAssets, pageContent, selectedAssets } from '../data/site';
+
+const brand = pageContent.brand;
+---
+
+<Layout
+  title={brand.title}
+  description={brand.description}
+>
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="eyebrow">{brand.eyebrow}</p>
+        <h1>{brand.heroTitle}</h1>
+        <p>{brand.heroBody}</p>
+      </div>
+      <div class="card-image-wrap hero-media-small">
+        <img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} />
+        <div class="overlay-note">매장 내부 전경</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <h2>{brand.valuesTitle}</h2>
+      <div class="grid-4">
+        {brand.values.map((item) => <article class="card"><h3>{item.title}</h3><p>{item.body}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>{brand.galleryTitle}</h2>
+      <div class="grid-4 gallery-grid" style="margin-top:1.5rem;">
+        {galleryAssets.slice(1, 5).map((asset) => (
+          <article class="gallery-card">
+            <div class="card-image-wrap">
+              <img src={asset.src} alt={asset.alt} />
+            </div>
+            <div class="gallery-copy">
+              <strong>{asset.title}</strong>
+              <span>{asset.category}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

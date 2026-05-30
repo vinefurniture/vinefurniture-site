@@ -1,0 +1,41 @@
+---
+import { selectedAssets, siteMeta } from '../data/site';
+
+const logoAsset = selectedAssets.logoPrimary;
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand-block">
+      <div class="footer-brand-lockup">
+        {
+          logoAsset.isRealAsset ? (
+            <img class="footer-logo" src={logoAsset.src} alt={logoAsset.alt} />
+          ) : (
+            <span class="footer-brand-mark" aria-hidden="true">VF</span>
+          )
+        }
+        <p class="footer-title">{siteMeta.name}</p>
+      </div>
+      <p>30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점</p>
+    </div>
+
+    <div>
+      <p class="footer-title">매장 정보</p>
+      <ul class="footer-list">
+        <li>주소: <span data-draft-field="business.address">{siteMeta.address}</span></li>
+        <li>대표번호: <span data-draft-field="business.phone">{siteMeta.phone}</span></li>
+        <li>운영시간: <span data-draft-field="business.hours">{siteMeta.hours}</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-title">외부 채널</p>
+      <ul class="footer-list">
+        <li><a href={siteMeta.instagram} target="_blank" rel="noreferrer">인스타그램</a></li>
+        <li><a href={siteMeta.blog} target="_blank" rel="noreferrer">네이버 블로그</a></li>
+        <li><a href={siteMeta.place} target="_blank" rel="noreferrer">네이버 플레이스</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

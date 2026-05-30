@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { pageContent, selectedAssets, siteMeta } from '../data/site';
+
+const locationPage = pageContent.location;
+---
+
+<Layout
+  title={locationPage.title}
+  description={locationPage.description}
+>
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="eyebrow">{locationPage.eyebrow}</p>
+        <h1>{locationPage.heroTitle}</h1>
+        <p data-draft-field="locationPage.heroBody">{locationPage.heroBody}</p>
+        <div class="button-group">
+          <a class="button" href={locationPage.primaryCtaHref} target="_blank" rel="noreferrer">{locationPage.primaryCtaLabel}</a>
+          <a class="button secondary" href={locationPage.secondaryCtaHref} data-draft-href="business.phoneHref">{locationPage.secondaryCtaLabel}</a>
+        </div>
+      </div>
+      <div class="card-image-wrap hero-media-small">
+        <img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} data-draft-image="storeView" />
+        <div class="overlay-note">매장 위치 확인용 대표 이미지</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <h2>{locationPage.memoTitle}</h2>
+      <div class="grid-3">
+        {locationPage.notes.map((item) => <article class="card"><h3>{item.title}</h3><p set:html={item.body.replace(/\n/g, '<br />')} /></article>)}
+      </div>
+    </div>
+  </section>
+</Layout>

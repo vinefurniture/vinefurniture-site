@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f1ea" />
+      <stop offset="100%" stop-color="#dcc8b4" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect x="120" y="150" width="1360" height="700" rx="44" fill="#fcfaf7" stroke="#e0cfbd" />
+  <rect x="320" y="450" width="760" height="180" rx="34" fill="#d0b89f" />
+  <rect x="320" y="380" width="240" height="110" rx="26" fill="#dbc6b0" />
+  <rect x="580" y="380" width="240" height="110" rx="26" fill="#dbc6b0" />
+  <rect x="840" y="380" width="240" height="110" rx="26" fill="#dbc6b0" />
+  <circle cx="1210" cy="460" r="90" fill="#b89f84" />
+  <rect x="210" y="590" width="1180" height="90" rx="24" fill="#c7b098" />
+  <text x="220" y="270" fill="#7b654f" font-size="34" font-family="Pretendard, Noto Sans KR, sans-serif">DEMO HERO · LIVING SOFA</text>
+</svg>

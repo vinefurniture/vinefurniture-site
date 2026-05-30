@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "name": "바인퍼니처",
+    "defaultTitle": "바인퍼니처 | 30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점",
+    "defaultDescription": "30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점 바인퍼니처. 침대, 소파, 식탁 등 프리미엄 가구를 합리적인 가격으로 제안합니다.",
+    "siteUrl": "https://vinefurniture.kr",
+    "locale": "ko_KR",
+    "themeColor": "#f7f1ea",
+    "ogImage": "/images/og/vine-og-default.svg",
+    "socialImageAlt": "바인퍼니처 대표 소개 이미지",
+    "socialImageWidth": 1200,
+    "socialImageHeight": 630,
+    "favicon": "/favicon.svg",
+    "faviconIco": "/favicon.ico",
+    "appleTouchIcon": "/apple-touch-icon.svg",
+    "manifest": "/site.webmanifest"
+  },
+  "business": {
+    "phone": "031-312-1051",
+    "phoneHref": "tel:031-312-1051",
+    "address": "경기 시흥시 수인로3488번길 1 지층(신천동)",
+    "hours": "매일 10:00~19:00",
+    "instagram": "https://www.instagram.com/vinefurniture/",
+    "blog": "https://blog.naver.com/syj1051000",
+    "place": "https://naver.me/xlb3Zq7H"
+  },
+  "navigation": [
+    { "href": "/", "label": "메인" },
+    { "href": "/brand", "label": "브랜드 소개" },
+    { "href": "/gallery", "label": "갤러리" },
+    { "href": "/location", "label": "오시는 길" },
+    { "href": "/contact", "label": "문의" }
+  ],
+  "home": {
+    "title": "바인퍼니처 | 30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점",
+    "description": "30년 경력의 가구 장인이 직접 운영하는 바인퍼니처에서 침대, 소파, 식탁 등 공장 직영 가구를 합리적인 가격으로 만나보세요.",
+    "eyebrow": "Vine Furniture",
+    "heroTitle": "30년 경력의 가구 장인이 직접 운영하는 바인퍼니처",
+    "heroBody": "공장 직영의 프리미엄 가구를 합리적인 가격으로 만나보세요. 오래 사용할 가구를 찾고 계신다면, 매장에서 직접 확인하고 편하게 상담받아보실 수 있습니다.",
+    "heroPrimaryCtaLabel": "전화 문의하기",
+    "heroPrimaryCtaHref": "tel:031-312-1051",
+    "heroSecondaryCtaLabel": "매장 위치 보기",
+    "heroSecondaryCtaHref": "/location",
+    "aboutTitle": "바인퍼니처는 어떤 곳인가요?",
+    "aboutBody": "바인퍼니처는 30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점입니다. 좋은 소재와 편안한 디자인, 오래 쓸 수 있는 품질을 합리적인 가격으로 제안합니다.",
+    "infoTitle": "매장 기본 정보",
+    "strengthTitle": "핵심 강점",
+    "strengths": [
+      { "title": "30년 경력의 노하우", "body": "오랜 경험을 바탕으로 공간과 용도에 맞는 가구를 제안합니다." },
+      { "title": "공장 직영 시스템", "body": "직접 제작과 관리로 불필요한 유통 과정을 줄였습니다." },
+      { "title": "합리적인 가격", "body": "품질은 지키고 가격 부담은 낮춘 가구를 만나보실 수 있습니다." },
+      { "title": "직접 상담 가능", "body": "원하는 스타일과 공간에 맞춰 편하게 상담해드립니다." }
+    ],
+    "galleryTitle": "사진으로 먼저 만나보는 바인퍼니처",
+    "galleryNote": "침대, 소파, 식탁, 매장 전경까지 대표 이미지를 먼저 둘러보시고 편하게 상담받아보세요.",
+    "visitTitle": "매장에서 직접 확인해보세요",
+    "visitBody": "가구는 직접 보고 비교할수록 더 만족스러운 선택이 됩니다. 바인퍼니처 매장에서 편하게 둘러보시고 상담받아보세요.",
+    "visitPrimaryCtaLabel": "오시는 길 보기",
+    "visitPrimaryCtaHref": "/location",
+    "visitSecondaryCtaLabel": "네이버 지도 보기",
+    "visitSecondaryCtaHref": "https://naver.me/xlb3Zq7H"
+  },
+  "brand": {
+    "title": "브랜드 소개 | 바인퍼니처",
+    "description": "바인퍼니처의 브랜드 철학과 공장 직영 운영 방식, 오래 사용할 수 있는 가구를 제안하는 기준을 소개합니다.",
+    "eyebrow": "Brand Story",
+    "heroTitle": "오래도록 함께할 진짜 가구, 바인퍼니처",
+    "heroBody": "바인퍼니처는 30년 경력의 가구 장인이 직접 운영하는 공장 직영 프리미엄 가구 전문점입니다. 오랜 시간 쌓아온 노하우를 바탕으로 디테일과 마감의 완성도를 높이고, 중간 유통 과정을 줄여 보다 합리적인 가격으로 좋은 가구를 제안합니다.",
+    "valuesTitle": "우리가 중요하게 생각하는 것",
+    "values": [
+      { "title": "좋은 소재와 마감", "body": "보이는 디자인뿐 아니라 오래 쓸 수 있는 완성도를 중요하게 생각합니다." },
+      { "title": "오래 쓸 수 있는 가구", "body": "생활 공간에 자연스럽게 스며드는 가구를 제안합니다." },
+      { "title": "공간에 어울리는 디자인", "body": "취향과 생활방식에 맞는 구성을 함께 고민합니다." },
+      { "title": "정직한 가격", "body": "공장 직영 구조를 바탕으로 부담을 줄인 가격을 지향합니다." }
+    ],
+    "galleryTitle": "대표 제품 / 공간 이미지"
+  },
+  "galleryPage": {
+    "title": "갤러리 | 바인퍼니처",
+    "description": "바인퍼니처의 침대, 소파, 식탁, 매장 공간 이미지를 갤러리 형식으로 미리 확인해보세요.",
+    "eyebrow": "Gallery",
+    "heroTitle": "바인퍼니처의 제품과 공간 이미지를 사진으로 만나보세요.",
+    "heroNote": "침대, 소파, 식탁, 매장 전경 등 대표 이미지를 한눈에 둘러보실 수 있습니다. 더 자세한 상담은 전화나 방문으로 이어서 안내해드립니다."
+  },
+  "locationPage": {
+    "title": "오시는 길 | 바인퍼니처",
+    "description": "경기 시흥시 바인퍼니처 매장 위치, 운영시간, 방문 전 확인하면 좋은 안내 정보를 확인해보세요.",
+    "eyebrow": "Location",
+    "heroTitle": "매장에서 직접 확인해보세요",
+    "heroBody": "가구는 직접 보고 비교할수록 더 만족스러운 선택이 됩니다. 방문 전 연락 주시면 더 편하게 안내해드립니다.",
+    "primaryCtaLabel": "네이버 플레이스 열기",
+    "primaryCtaHref": "https://naver.me/xlb3Zq7H",
+    "secondaryCtaLabel": "전화로 문의하기",
+    "secondaryCtaHref": "tel:031-312-1051",
+    "memoTitle": "방문 안내 메모",
+    "notes": [
+      { "title": "매장 기본 정보", "body": "경기 시흥시 수인로3488번길 1 지층(신천동)\n매일 10:00~19:00\n031-312-1051" },
+      { "title": "방문 전 연락 권장", "body": "방문 전 전화 주시면 상담 준비와 매장 안내를 더 편하게 도와드립니다." },
+      { "title": "첫 방문 고객 안내", "body": "매장에서 침대, 소파, 식탁 대표 제품을 직접 비교해보실 수 있습니다. 궁금한 스타일이나 예산을 미리 알려주시면 상담이 더 수월합니다." }
+    ]
+  },
+  "contactPage": {
+    "title": "문의 | 바인퍼니처",
+    "description": "바인퍼니처 제품 상담, 방문 상담, 공간 스타일 상담은 전화와 인스타그램을 통해 편하게 문의하실 수 있습니다.",
+    "eyebrow": "Contact",
+    "heroTitle": "편하게 문의하시고 매장에서 직접 확인해보세요.",
+    "heroBody": "제품, 스타일, 공간에 맞는 가구가 고민되신다면 편하게 문의해주세요. 방문 전 연락 주시면 더 편하게 안내해드립니다.",
+    "primaryCtaLabel": "지금 전화 문의하기",
+    "primaryCtaHref": "tel:031-312-1051",
+    "secondaryCtaLabel": "인스타그램 보기",
+    "secondaryCtaHref": "https://www.instagram.com/vinefurniture/",
+    "cards": [
+      { "title": "전화 상담", "body": "031-312-1051" },
+      { "title": "상담 가능 내용", "body": "제품 상담 · 방문 상담 · 공간/스타일 상담" },
+      { "title": "외부 채널", "body": "인스타그램\n네이버 블로그" }
+    ]
+  }
+}
