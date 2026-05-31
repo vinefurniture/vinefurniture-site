@@ -32,9 +32,9 @@ const categoryLabels = [...new Set(galleryAssets.map((asset) => asset.category).
         </article>
       </div>
 
-      <div class="grid-4 gallery-grid" style="margin-top:2rem;">
+      <div class="grid-4 gallery-grid" style="margin-top:2rem;" data-draft-gallery-container="gallery">
         {galleryAssets.map((asset) => (
-          <article class="gallery-card">
+          <article class="gallery-card" data-draft-gallery-item={asset.key}>
             <div class="card-image-wrap">
               <img src={asset.src} alt={asset.alt} />
             </div>
@@ -53,7 +53,7 @@ const categoryLabels = [...new Set(galleryAssets.map((asset) => asset.category).
           <p>실제 가구의 크기감, 소재감, 색상은 매장에서 직접 보실 때 더 정확하게 확인하실 수 있습니다.</p>
         </div>
         <div class="button-group cta-panel-actions">
-          <a class="button" href={siteMeta.phoneHref}>전화 문의하기</a>
+          <a class="button" href={siteMeta.phoneHref} data-draft-href="business.phoneHref">전화 문의하기</a>
           <a class="button secondary" href="/location">오시는 길 보기</a>
         </div>
       </div>

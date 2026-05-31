@@ -17,7 +17,7 @@ const contactPage = pageContent.contact;
         <p data-draft-field="contactPage.heroBody">{contactPage.heroBody}</p>
         <div class="button-group">
           <a class="button" href={contactPage.primaryCtaHref} data-draft-href="business.phoneHref">{contactPage.primaryCtaLabel}</a>
-          <a class="button secondary" href={contactPage.secondaryCtaHref} target="_blank" rel="noreferrer">{contactPage.secondaryCtaLabel}</a>
+          <a class="button secondary" href={contactPage.secondaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.instagram">{contactPage.secondaryCtaLabel}</a>
         </div>
       </div>
       <div class="card-image-wrap hero-media-small">
@@ -31,7 +31,7 @@ const contactPage = pageContent.contact;
     <div class="container grid-3">
       <article class="card"><h3>{contactPage.cards[0].title}</h3><p data-draft-field="business.phone">{contactPage.cards[0].body}</p></article>
       <article class="card"><h3>{contactPage.cards[1].title}</h3><p>{contactPage.cards[1].body}</p></article>
-      <article class="card"><h3>{contactPage.cards[2].title}</h3><p><a href={siteMeta.instagram} target="_blank" rel="noreferrer">인스타그램</a><br /><a href={siteMeta.blog} target="_blank" rel="noreferrer">네이버 블로그</a></p></article>
+      <article class="card"><h3>{contactPage.cards[2].title}</h3><p><a href={siteMeta.instagram} target="_blank" rel="noreferrer" data-draft-href="business.instagram">인스타그램</a><br /><a href={siteMeta.blog} target="_blank" rel="noreferrer" data-draft-href="business.blog">네이버 블로그</a></p></article>
     </div>
   </section>
 </Layout>

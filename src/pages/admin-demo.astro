@@ -1,28 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { galleryAssets, pageContent, selectedAssets, siteMeta } from '../data/site';
+import { assetInventory, pageContent, selectedAssets, siteMeta } from '../data/site';
 
 const home = pageContent.home;
 const locationPage = pageContent.location;
 const contactPage = pageContent.contact;
+const galleryPreview = assetInventory.gallery.slice(0, 6);
 ---
 
-<Layout title="관리자 화면 데모 | 바인퍼니처" description="PC 숙련도가 낮은 운영자도 쉽게 쓸 수 있도록 구성한 바인퍼니처 관리자 화면 프로토타입입니다.">
+<Layout title="관리자 화면 데모 | 바인퍼니처" description="바인퍼니처 간편 관리자 MVP가 어떤 범위를 다루는지 설명하는 데모 페이지입니다.">
   <section class="section" style="background: var(--color-surface);">
-    <div class="container" style="display:grid; gap:1.25rem;">
-      <div class="card">
-        <p class="eyebrow">Admin Prototype</p>
-        <h1>쉽게 관리하는 바인퍼니처 관리자 화면 초안</h1>
+    <div class="container admin-shell">
+      <div class="card admin-hero-card">
+        <p class="eyebrow">Admin Demo</p>
+        <h1>현재 관리자 MVP에서 다루는 범위</h1>
         <p>
-          이 페이지는 실제 저장 기능이 없는 UX 프로토타입입니다. 아버님처럼 PC 숙련도가 높지 않은 운영자도
-          <strong>전화번호 수정 / 운영시간 수정 / 대표 사진 교체 / 갤러리 순서 변경</strong> 정도는 직관적으로 할 수 있게 설계하는 방향을 보여줍니다.
+          실제 저장은 <code>/admin</code> 에서 하고, 이 페이지는 운영자에게 어떤 항목을 관리하게 할지 설명하는
+          안내용 데모입니다. 핵심은 <strong>자주 바뀌는 정보만 좁게 열어두는 것</strong>입니다.
         </p>
       </div>
 
       <div class="grid-3">
-        <article class="card"><h3>1. 오늘 가장 자주 바꾸는 정보</h3><p>전화번호, 운영시간, 주소, 안내문구만 먼저 노출</p></article>
-        <article class="card"><h3>2. 사진은 자리별로 교체</h3><p>"메인 대표사진", "소파 사진", "매장 전경"처럼 이름으로 관리</p></article>
-        <article class="card"><h3>3. 위험한 항목은 숨기기</h3><p>레이아웃, 색상, SEO, 배포 설정은 관리자 화면에서 숨김</p></article>
+        <article class="card"><h3>1. 기본 정보</h3><p>전화번호 · 운영시간 · 주소</p></article>
+        <article class="card"><h3>2. 외부 링크</h3><p>인스타그램 · 블로그 · 네이버 플레이스</p></article>
+        <article class="card"><h3>3. 미리보기 후 반영</h3><p>브라우저 초안 → 페이지 확인 → JSON 반영</p></article>
       </div>
     </div>
   </section>
@@ -30,41 +31,45 @@ const contactPage = pageContent.contact;
   <section class="section">
     <div class="container" style="display:grid; gap:1.25rem;">
       <div class="card">
-        <h2>매장 기본정보</h2>
+        <h2>운영자가 직접 바꾸는 항목</h2>
         <div class="grid-3">
-          <label class="card"><strong>대표 전화</strong><input value={siteMeta.phone} style="margin-top:0.75rem; width:100%; padding:0.9rem 1rem; border-radius:0.9rem; border:1px solid var(--color-border);" /></label>
-          <label class="card"><strong>운영시간</strong><input value={siteMeta.hours} style="margin-top:0.75rem; width:100%; padding:0.9rem 1rem; border-radius:0.9rem; border:1px solid var(--color-border);" /></label>
-          <label class="card"><strong>주소</strong><input value={siteMeta.address} style="margin-top:0.75rem; width:100%; padding:0.9rem 1rem; border-radius:0.9rem; border:1px solid var(--color-border);" /></label>
+          <article class="card"><strong>대표 전화</strong><p>{siteMeta.phone}</p></article>
+          <article class="card"><strong>운영시간</strong><p>{siteMeta.hours}</p></article>
+          <article class="card"><strong>주소</strong><p>{siteMeta.address}</p></article>
+          <article class="card"><strong>인스타그램</strong><p>{siteMeta.instagram}</p></article>
+          <article class="card"><strong>블로그</strong><p>{siteMeta.blog}</p></article>
+          <article class="card"><strong>네이버 플레이스</strong><p>{siteMeta.place}</p></article>
         </div>
       </div>
 
       <div class="card">
-        <h2>메인 문구</h2>
-        <div style="display:grid; gap:1rem;">
-          <label><strong>메인 제목</strong><textarea style="margin-top:0.75rem; width:100%; min-height:6rem; padding:1rem; border-radius:1rem; border:1px solid var(--color-border);">{home.heroTitle}</textarea></label>
-          <label><strong>메인 소개문</strong><textarea style="margin-top:0.75rem; width:100%; min-height:7rem; padding:1rem; border-radius:1rem; border:1px solid var(--color-border);">{home.heroBody}</textarea></label>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>대표 사진 교체</h2>
+        <h2>문구 수정 범위</h2>
         <div class="grid-3">
-          <article class="card"><img src={selectedAssets.heroPrimary.src} alt={selectedAssets.heroPrimary.alt} /><p style="margin-top:0.75rem;"><strong>메인 대표 사진</strong><br />교체 대상: {selectedAssets.heroPrimary.plannedSrc}</p></article>
-          <article class="card"><img src={selectedAssets.heroSecondary.src} alt={selectedAssets.heroSecondary.alt} /><p style="margin-top:0.75rem;"><strong>소파 대표 사진</strong><br />교체 대상: {selectedAssets.heroSecondary.plannedSrc}</p></article>
-          <article class="card"><img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} /><p style="margin-top:0.75rem;"><strong>매장 전경 사진</strong><br />교체 대상: {selectedAssets.storeView.plannedSrc}</p></article>
+          <article class="card"><h3>메인 제목</h3><p>{home.heroTitle}</p></article>
+          <article class="card"><h3>오시는 길 문구</h3><p>{locationPage.heroBody}</p></article>
+          <article class="card"><h3>문의 문구</h3><p>{contactPage.heroBody}</p></article>
         </div>
       </div>
 
       <div class="card">
-        <h2>갤러리 순서 바꾸기</h2>
-        <p class="note">실제 CMS에서는 드래그해서 순서 변경만 가능하게 두는 것이 가장 직관적입니다.</p>
-        <div class="grid-4" style="margin-top:1rem;">
-          {galleryAssets.map((asset, index) => (
-            <article class="gallery-card">
+        <h2>대표 사진 3장</h2>
+        <div class="grid-3">
+          <article class="card"><img src={selectedAssets.heroPrimary.src} alt={selectedAssets.heroPrimary.alt} /><p style="margin-top:0.75rem;"><strong>메인 대표 사진</strong><br />기본 경로: {selectedAssets.heroPrimary.plannedSrc}</p></article>
+          <article class="card"><img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} /><p style="margin-top:0.75rem;"><strong>매장 전경 사진</strong><br />기본 경로: {selectedAssets.storeView.plannedSrc}</p></article>
+          <article class="card"><img src={selectedAssets.heroSecondary.src} alt={selectedAssets.heroSecondary.alt} /><p style="margin-top:0.75rem;"><strong>문의 보조 사진</strong><br />기본 경로: {selectedAssets.heroSecondary.plannedSrc}</p></article>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>갤러리 순서 / 노출 관리 예시</h2>
+        <p class="note">실제 <code>/admin</code> 에서는 위/아래 버튼과 숨기기 버튼으로 관리합니다.</p>
+        <div class="grid-3" style="margin-top:1rem;">
+          {galleryPreview.map((asset) => (
+            <article class={`gallery-card${asset.visible ? '' : ' is-hidden'}`}>
               <div class="card-image-wrap"><img src={asset.src} alt={asset.alt} /></div>
               <div class="gallery-copy">
-                <strong>{index + 1}. {asset.title}</strong>
-                <span>{asset.category}</span>
+                <strong>{asset.order}. {asset.title}</strong>
+                <span>{asset.visible ? '노출중' : '숨김'}</span>
               </div>
             </article>
           ))}
@@ -72,9 +77,9 @@ const contactPage = pageContent.contact;
       </div>
 
       <div class="grid-3">
-        <article class="card"><h3>문의 페이지 문구</h3><p>{contactPage.heroBody}</p></article>
-        <article class="card"><h3>오시는 길 안내</h3><p>{locationPage.heroBody}</p></article>
-        <article class="card"><h3>권장 저장 방식</h3><p>"저장" 한 번 → 미리보기 확인 → "사이트 반영" 한 번의 2단계가 안전합니다.</p></article>
+        <article class="card"><h3>초안 저장</h3><p>브라우저 localStorage에 자동 저장</p></article>
+        <article class="card"><h3>미리보기</h3><p>메인 / 오시는 길 / 문의 페이지에 draft 파라미터로 반영</p></article>
+        <article class="card"><h3>사이트 반영</h3><p><code>vine-admin-publish.json</code> 생성 후 import 스크립트로 적용</p></article>
       </div>
     </div>
   </section>

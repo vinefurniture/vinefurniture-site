@@ -1,0 +1,26 @@
+<div class="card admin-action-bar">
+  <div class="admin-status-row">
+    <div>
+      <strong>저장 상태</strong>
+      <p id="admin-status" class="note admin-status-text">기본값을 불러왔습니다.</p>
+    </div>
+    <span id="admin-status-badge" class="admin-status-badge is-saved">자동 저장됨</span>
+  </div>
+
+  <div class="button-group admin-action-buttons admin-action-buttons-primary">
+    <button type="button" class="button" id="open-home-preview">메인 화면 보기</button>
+    <button type="button" class="button secondary" id="open-location-preview">오시는 길 보기</button>
+    <button type="button" class="button secondary" id="open-contact-preview">문의 화면 보기</button>
+  </div>
+
+  <details class="admin-more-actions">
+    <summary>추가 작업 열기</summary>
+    <div class="button-group admin-action-buttons admin-action-buttons-secondary">
+      <button type="button" class="button secondary" id="save-draft">지금 저장</button>
+      <button type="button" class="button secondary" id="export-draft">초안 JSON 내보내기</button>
+      <button type="button" class="button secondary" id="export-publish">사이트 반영 파일 내보내기</button>
+      <button type="button" class="button secondary" id="reset-draft">처음 상태로 되돌리기</button>
+    </div>
+    <p class="note">초안은 현재 브라우저에 저장됩니다. 반영 파일은 관리자가 따로 가져가서 사이트에 적용합니다.</p>
+  </details>
+</div>

@@ -16,6 +16,9 @@ const pageChecks = [
       { fragment: 'data-draft-field="home.heroBody"', label: 'home hero body binding' },
       { fragment: 'data-draft-image="heroPrimary"', label: 'home hero image binding' },
       { fragment: 'data-draft-image="storeView"', label: 'home store image binding' },
+      { fragment: 'data-draft-gallery-container="home"', label: 'home gallery preview container' },
+      { fragment: 'data-draft-gallery-item=', label: 'home gallery preview item', expectedCount: 8 },
+      { fragment: 'data-draft-href="business.place"', label: 'home place href binding' },
       { fragment: 'data-draft-field="business.address"', label: 'shared address binding', expectedCount: 2 },
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding', expectedCount: 2 },
       { fragment: 'data-draft-field="business.phone"', label: 'shared phone text binding', expectedCount: 2 },
@@ -32,7 +35,12 @@ const pageChecks = [
     route: '/gallery',
     file: 'gallery/index.html',
     titleFragment: '갤러리 | 바인퍼니처',
-    requiredBindings: [{ fragment: 'src="/admin/admin-preview.js"', label: 'preview script include' }],
+    requiredBindings: [
+      { fragment: 'src="/admin/admin-preview.js"', label: 'preview script include' },
+      { fragment: 'data-draft-gallery-container="gallery"', label: 'gallery preview container' },
+      { fragment: 'data-draft-gallery-item=', label: 'gallery preview items', expectedCount: 8 },
+      { fragment: 'data-draft-href="business.phoneHref"', label: 'gallery phone CTA binding' },
+    ],
   },
   {
     route: '/location',
@@ -46,6 +54,7 @@ const pageChecks = [
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding' },
       { fragment: 'data-draft-field="business.phone"', label: 'shared phone text binding' },
       { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 2 },
+      { fragment: 'data-draft-href="business.place"', label: 'location place href binding', expectedCount: 2 },
     ],
   },
   {
@@ -60,6 +69,8 @@ const pageChecks = [
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding' },
       { fragment: 'data-draft-field="business.phone"', label: 'shared phone text binding', expectedCount: 2 },
       { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 2 },
+      { fragment: 'data-draft-href="business.instagram"', label: 'contact instagram href binding', expectedCount: 3 },
+      { fragment: 'data-draft-href="business.blog"', label: 'contact blog href binding', expectedCount: 2 },
     ],
   },
 ];
@@ -89,6 +100,9 @@ const previewScriptChecks = [
   { fragment: 'setText(\'[data-draft-field="business.hours"]\'', label: 'business.hours text update' },
   { fragment: 'setText(\'[data-draft-field="business.address"]\'', label: 'business.address text update' },
   { fragment: 'setHref(\'[data-draft-href="business.phoneHref"]\'', label: 'business.phoneHref href update' },
+  { fragment: 'setHref(\'[data-draft-href="business.instagram"]\'', label: 'business.instagram href update' },
+  { fragment: 'setHref(\'[data-draft-href="business.blog"]\'', label: 'business.blog href update' },
+  { fragment: 'setHref(\'[data-draft-href="business.place"]\'', label: 'business.place href update' },
   { fragment: 'setText(\'[data-draft-field="home.heroTitle"]\'', label: 'home.heroTitle text update' },
   { fragment: 'setHtml(\'[data-draft-field="home.heroBody"]\'', label: 'home.heroBody html update' },
   { fragment: 'setText(\'[data-draft-field="locationPage.heroBody"]\'', label: 'locationPage.heroBody text update' },
@@ -96,6 +110,8 @@ const previewScriptChecks = [
   { fragment: 'setImage(\'[data-draft-image="heroPrimary"]\'', label: 'heroPrimary image update' },
   { fragment: 'setImage(\'[data-draft-image="heroSecondary"]\'', label: 'heroSecondary image update' },
   { fragment: 'setImage(\'[data-draft-image="storeView"]\'', label: 'storeView image update' },
+  { fragment: 'const DRAFT_KEY = \'vine-admin-draft-v2\'' , label: 'new admin draft storage key' },
+  { fragment: 'const applyGallery = (draft) => {', label: 'gallery preview application' },
 ];
 
 const countOccurrences = (source, fragment) => source.split(fragment).length - 1;
@@ -157,9 +173,7 @@ for (const page of pageChecks) {
     const count = countOccurrences(html, binding.fragment);
     if (binding.expectedCount != null) {
       if (count !== binding.expectedCount) {
-        pageErrors.push(
-          `${binding.label} expected ${binding.expectedCount} occurrence(s), found ${count}`,
-        );
+        pageErrors.push(`${binding.label} expected ${binding.expectedCount} occurrence(s), found ${count}`);
       }
       continue;
     }

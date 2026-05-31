@@ -1,0 +1,30 @@
+---
+import type { AdminGalleryItemDef } from '../../data/admin-schema';
+
+interface Props {
+  items: AdminGalleryItemDef[];
+}
+
+const { items } = Astro.props;
+const sortedItems = [...items].sort((a, b) => a.order - b.order || a.title.localeCompare(b.title, 'ko-KR'));
+---
+
+<div class="admin-gallery-list" id="admin-gallery-list">
+  {sortedItems.map((item) => (
+    <article class={`admin-gallery-item${item.visible ? '' : ' is-hidden'}`} data-admin-gallery-item={item.key} data-admin-gallery-visible={String(item.visible)}>
+      <img src={item.src} alt={item.alt} class="admin-gallery-thumb" />
+      <div class="admin-gallery-copy">
+        <div class="admin-gallery-copy-top">
+          <strong data-admin-gallery-order-label={item.key}>{item.order}. {item.title}</strong>
+          <span>{item.category}</span>
+        </div>
+        <p class="note">{item.visible ? '현재 사이트에 보이는 사진' : '현재 사이트에서 숨겨진 사진'}</p>
+      </div>
+      <div class="admin-gallery-actions">
+        <button type="button" class="button secondary" data-admin-gallery-action="up" data-admin-gallery-key={item.key}>위로</button>
+        <button type="button" class="button secondary" data-admin-gallery-action="down" data-admin-gallery-key={item.key}>아래로</button>
+        <button type="button" class="button secondary" data-admin-gallery-action="toggle" data-admin-gallery-key={item.key}>숨기기</button>
+      </div>
+    </article>
+  ))}
+</div>

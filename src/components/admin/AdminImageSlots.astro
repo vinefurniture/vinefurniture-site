@@ -1,0 +1,24 @@
+---
+import type { AdminImageSlotDef } from '../../data/admin-schema';
+
+interface Props {
+  slots: AdminImageSlotDef[];
+}
+
+const { slots } = Astro.props;
+---
+
+<div class="admin-image-grid">
+  {slots.map((slot) => (
+    <article class="card admin-image-card">
+      <img src={slot.src} alt={slot.alt} data-admin-preview={slot.key} />
+      <div>
+        <strong>{slot.label}</strong>
+        <p class="note">{slot.hint}</p>
+        <p class="note admin-path-note">반영 대상 경로: <code>{slot.plannedSrc}</code></p>
+        <input type="file" accept="image/*" data-admin-file={slot.key} />
+        <button type="button" class="button secondary admin-clear-image" data-admin-clear={slot.key}>기본 사진으로 되돌리기</button>
+      </div>
+    </article>
+  ))}
+</div>

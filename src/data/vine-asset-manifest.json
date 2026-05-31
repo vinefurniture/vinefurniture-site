@@ -4,28 +4,28 @@
       "key": "heroPrimary",
       "slot": "hero",
       "title": "호텔형 침대 대표컷",
-      "src": "/images/vine-demo/hero-bed-demo.svg",
+      "src": "/images/vine/hero/hero-primary-bed.jpg",
       "plannedSrc": "/images/vine/hero/hero-primary-bed.jpg",
       "alt": "바인퍼니처 호텔형 침대 대표 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "admin publish import"
     },
     {
       "key": "heroSecondary",
       "slot": "hero",
       "title": "거실 소파 대표컷",
-      "src": "/images/vine-demo/hero-sofa-demo.svg",
+      "src": "/images/vine/hero/hero-secondary-sofa.jpg",
       "plannedSrc": "/images/vine/hero/hero-secondary-sofa.jpg",
       "alt": "바인퍼니처 거실 소파 대표 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "admin publish import"
     },
     {
       "key": "storeView",
       "slot": "store",
       "title": "매장 내부 전경",
-      "src": "/images/vine-demo/store-interior-demo.svg",
+      "src": "/images/vine/store/store-interior-main.jpg",
       "plannedSrc": "/images/vine/store/store-interior-main.jpg",
       "alt": "바인퍼니처 매장 내부 전경 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "admin publish import"
     },
     {
       "key": "logoPrimary",
@@ -46,7 +46,9 @@
       "src": "/images/vine-demo/gallery-bed-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-bed-01.jpg",
       "alt": "바인퍼니처 침대 쇼룸 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 1
     },
     {
       "key": "gallerySofa01",
@@ -56,7 +58,9 @@
       "src": "/images/vine-demo/gallery-sofa-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-sofa-01.jpg",
       "alt": "바인퍼니처 소파 쇼룸 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 2
     },
     {
       "key": "galleryTable01",
@@ -66,7 +70,9 @@
       "src": "/images/vine-demo/gallery-table-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-table-01.jpg",
       "alt": "바인퍼니처 식탁 연출 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 3
     },
     {
       "key": "galleryStore01",
@@ -76,7 +82,9 @@
       "src": "/images/vine-demo/gallery-store-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-store-01.jpg",
       "alt": "바인퍼니처 매장 분위기 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 4
     },
     {
       "key": "galleryStorage01",
@@ -86,7 +94,9 @@
       "src": "/images/vine-demo/gallery-storage-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-storage-01.jpg",
       "alt": "바인퍼니처 쇼룸 전시 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 5
     },
     {
       "key": "galleryInstagramBed01",
@@ -96,7 +106,9 @@
       "src": "/images/vine-demo/hero-bed-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-instagram-bed-01.jpg",
       "alt": "바인퍼니처 침실 스타일링 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 6
     },
     {
       "key": "galleryInstagramSofa01",
@@ -106,7 +118,9 @@
       "src": "/images/vine-demo/hero-sofa-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-instagram-sofa-01.jpg",
       "alt": "바인퍼니처 거실 스타일링 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 7
     },
     {
       "key": "galleryStoreInterior01",
@@ -116,7 +130,9 @@
       "src": "/images/vine-demo/store-interior-demo.svg",
       "plannedSrc": "/images/vine/gallery/gallery-store-interior-01.jpg",
       "alt": "바인퍼니처 매장 전경 이미지",
-      "source": "기존 vinefurniture.kr 공개 이미지 수집본"
+      "source": "기존 vinefurniture.kr 공개 이미지 수집본",
+      "visible": true,
+      "order": 8
     }
   ]
 }

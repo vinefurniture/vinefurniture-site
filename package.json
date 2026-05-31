@@ -15,6 +15,7 @@
     "assets:intake": "node scripts/generate-vine-asset-intake.mjs --format=csv",
     "assets:intake:md": "node scripts/generate-vine-asset-intake.mjs --format=markdown",
     "preview:check": "node scripts/check-preview-readiness.mjs",
+    "admin:import": "node scripts/import-admin-publish.mjs",
     "astro": "astro"
   },
   "dependencies": {

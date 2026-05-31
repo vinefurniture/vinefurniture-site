@@ -58,9 +58,9 @@ const home = pageContent.home;
     <div class="container">
       <h2>{home.galleryTitle}</h2>
       <p class="note">{home.galleryNote}</p>
-      <div class="grid-4 gallery-grid" style="margin-top:1.5rem;">
-        {galleryAssets.slice(0, 4).map((asset) => (
-          <article class="gallery-card">
+      <div class="grid-4 gallery-grid" style="margin-top:1.5rem;" data-draft-gallery-container="home" data-draft-gallery-limit="4">
+        {galleryAssets.map((asset, index) => (
+          <article class={`gallery-card home-gallery-item${index >= 4 ? ' is-gallery-extra' : ''}`} data-draft-gallery-item={asset.key} hidden={index >= 4}>
             <div class="card-image-wrap">
               <img src={asset.src} alt={asset.alt} />
             </div>
@@ -81,7 +81,7 @@ const home = pageContent.home;
         <p>{home.visitBody}</p>
         <div class="button-group">
           <a class="button" href={home.visitPrimaryCtaHref}>{home.visitPrimaryCtaLabel}</a>
-          <a class="button secondary" href={home.visitSecondaryCtaHref} target="_blank" rel="noreferrer">{home.visitSecondaryCtaLabel}</a>
+          <a class="button secondary" href={home.visitSecondaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{home.visitSecondaryCtaLabel}</a>
         </div>
       </div>
       <div class="card-image-wrap hero-media-small">

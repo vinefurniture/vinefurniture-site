@@ -620,9 +620,66 @@ button {
   border: 1px solid var(--color-border);
 }
 
+.admin-path-note code {
+  word-break: break-all;
+}
+
+.admin-field-stack {
+  display: grid;
+  gap: 1rem;
+}
+
 .admin-clear-image {
   margin-top: 0.75rem;
   width: 100%;
+}
+
+.admin-gallery-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.admin-gallery-item {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.admin-gallery-item.is-hidden {
+  opacity: 0.65;
+  background: #faf7f2;
+}
+
+.admin-gallery-thumb {
+  width: 104px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  border: 1px solid var(--color-border);
+}
+
+.admin-gallery-copy,
+.admin-gallery-copy-top,
+.admin-gallery-actions {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.admin-gallery-actions {
+  min-width: 106px;
+}
+
+.admin-gallery-actions .button {
+  width: 100%;
+}
+
+.admin-summary-block p {
+  word-break: break-word;
 }
 
 .admin-summary-block {

@@ -1,29 +1,23 @@
 ---
+import AdminActionBar from '../components/admin/AdminActionBar.astro';
+import AdminGalleryManager from '../components/admin/AdminGalleryManager.astro';
+import AdminImageSlots from '../components/admin/AdminImageSlots.astro';
+import AdminSection from '../components/admin/AdminSection.astro';
+import AdminTextFields from '../components/admin/AdminTextFields.astro';
+import {
+  adminBusinessFields,
+  adminCopyFields,
+  adminDefaults,
+  adminDraftStorageKey,
+  adminGalleryItems,
+  adminImageSlots,
+  adminLinkFields,
+} from '../data/admin-schema';
 import Layout from '../layouts/Layout.astro';
-import { pageContent, selectedAssets, siteMeta } from '../data/site';
 
-const adminDefaults = {
-  business: {
-    phone: siteMeta.phone,
-    phoneHref: siteMeta.phoneHref,
-    address: siteMeta.address,
-    hours: siteMeta.hours,
-  },
-  home: {
-    heroTitle: pageContent.home.heroTitle,
-    heroBody: pageContent.home.heroBody,
-  },
-  locationPage: {
-    heroBody: pageContent.location.heroBody,
-  },
-  contactPage: {
-    heroBody: pageContent.contact.heroBody,
-  },
-  assetSlots: {
-    heroPrimary: selectedAssets.heroPrimary.src,
-    heroSecondary: selectedAssets.heroSecondary.src,
-    storeView: selectedAssets.storeView.src,
-  },
+const adminBootstrap = {
+  storageKey: adminDraftStorageKey,
+  defaults: adminDefaults,
 };
 ---
 
@@ -34,149 +28,49 @@ const adminDefaults = {
         <p class="eyebrow">Simple Admin</p>
         <h1>쉽게 수정하는 바인퍼니처 관리자</h1>
         <p>
-          이 화면에서는 <strong>전화번호, 운영시간, 주소, 메인 문구, 대표 사진 3장</strong>만 바꿉니다.
+          이 화면에서는 <strong>전화번호, 운영시간, 주소, 외부 링크, 메인 문구, 대표 사진 3장, 갤러리 순서</strong>만 바꿉니다.
           어려운 설정은 숨기고, 자주 쓰는 항목만 남겼습니다.
         </p>
 
         <div class="admin-step-strip">
           <article class="admin-step-card">
             <strong>1. 내용 수정</strong>
-            <p>아래 칸을 바꾸면 자동 저장됩니다.</p>
+            <p>자주 바꾸는 항목만 입력하면 자동 저장됩니다.</p>
           </article>
           <article class="admin-step-card">
             <strong>2. 미리보기 확인</strong>
-            <p>버튼을 눌러 사이트 화면을 새 탭에서 봅니다.</p>
+            <p>버튼을 눌러 실제 페이지에서 초안을 확인합니다.</p>
           </article>
           <article class="admin-step-card">
-            <strong>3. 최종 반영</strong>
-            <p>확정된 내용만 실제 사이트에 옮기면 됩니다.</p>
+            <strong>3. 사이트 반영 파일 내보내기</strong>
+            <p>최종 확인 후 관리자가 적용할 JSON 파일을 저장합니다.</p>
           </article>
         </div>
       </div>
 
-      <div class="card admin-action-bar">
-        <div class="admin-status-row">
-          <div>
-            <strong>저장 상태</strong>
-            <p id="admin-status" class="note admin-status-text">기본값을 불러왔습니다.</p>
-          </div>
-          <span id="admin-status-badge" class="admin-status-badge is-saved">자동 저장됨</span>
-        </div>
-
-        <div class="button-group admin-action-buttons admin-action-buttons-primary">
-          <button type="button" class="button" id="open-home-preview">메인 화면 보기</button>
-          <button type="button" class="button secondary" id="open-location-preview">오시는 길 보기</button>
-          <button type="button" class="button secondary" id="open-contact-preview">문의 화면 보기</button>
-        </div>
-
-        <details class="admin-more-actions">
-          <summary>추가 작업 열기</summary>
-          <div class="button-group admin-action-buttons admin-action-buttons-secondary">
-            <button type="button" class="button secondary" id="save-draft">지금 저장</button>
-            <button type="button" class="button secondary" id="export-draft">JSON 내보내기</button>
-            <button type="button" class="button secondary" id="reset-draft">처음 상태로 되돌리기</button>
-          </div>
-          <p class="note">초안은 현재 브라우저에만 저장됩니다.</p>
-        </details>
-      </div>
+      <AdminActionBar />
 
       <div class="admin-grid">
         <form id="admin-form" class="admin-form" autocomplete="off">
-          <section class="card admin-section-card">
-            <div class="admin-section-head">
-              <h2>1. 매장 기본 정보</h2>
-              <p class="note">전화번호와 운영시간은 고객이 가장 자주 보는 정보입니다.</p>
-            </div>
-            <div class="grid-3">
-              <label class="admin-field">
-                <span>대표 전화</span>
-                <input name="business.phone" type="text" inputmode="tel" />
-                <small>예: 031-312-1051</small>
-              </label>
-              <label class="admin-field">
-                <span>운영시간</span>
-                <input name="business.hours" type="text" />
-                <small>예: 매일 10:00~19:00</small>
-              </label>
-              <label class="admin-field">
-                <span>주소</span>
-                <input name="business.address" type="text" />
-                <small>지번/건물층까지 한 줄로 적어주세요.</small>
-              </label>
-            </div>
-          </section>
+          <AdminSection title="1. 매장 기본 정보" note="전화번호와 운영시간은 고객이 가장 자주 보는 정보입니다.">
+            <AdminTextFields fields={adminBusinessFields} columns="grid-3" />
+          </AdminSection>
 
-          <section class="card admin-section-card">
-            <div class="admin-section-head">
-              <h2>2. 메인 화면 문구</h2>
-              <p class="note">첫 화면에서 보이는 핵심 소개 문구입니다.</p>
-            </div>
-            <div style="display:grid; gap:1rem;">
-              <label class="admin-field">
-                <span>메인 제목</span>
-                <textarea name="home.heroTitle" rows="3"></textarea>
-                <small>너무 길지 않게 한 문장으로 적는 것이 좋습니다.</small>
-              </label>
-              <label class="admin-field">
-                <span>메인 소개문</span>
-                <textarea name="home.heroBody" rows="5"></textarea>
-                <small>매장 강점과 방문 유도를 짧게 적어주세요.</small>
-              </label>
-            </div>
-          </section>
+          <AdminSection title="2. 외부 채널 링크" note="푸터와 문의/오시는 길 버튼에 연결되는 링크입니다.">
+            <AdminTextFields fields={adminLinkFields} columns="stack" />
+          </AdminSection>
 
-          <section class="card admin-section-card">
-            <div class="admin-section-head">
-              <h2>3. 안내 문구</h2>
-              <p class="note">오시는 길과 문의 페이지에 들어가는 소개 문구입니다.</p>
-            </div>
-            <div style="display:grid; gap:1rem;">
-              <label class="admin-field">
-                <span>오시는 길 소개문</span>
-                <textarea name="locationPage.heroBody" rows="4"></textarea>
-              </label>
-              <label class="admin-field">
-                <span>문의 페이지 소개문</span>
-                <textarea name="contactPage.heroBody" rows="4"></textarea>
-              </label>
-            </div>
-          </section>
+          <AdminSection title="3. 메인/안내 문구" note="첫 화면과 주요 안내 페이지에서 보이는 핵심 소개 문구입니다.">
+            <AdminTextFields fields={adminCopyFields} columns="stack" />
+          </AdminSection>
 
-          <section class="card admin-section-card">
-            <div class="admin-section-head">
-              <h2>4. 대표 사진 3장</h2>
-              <p class="note">사진을 고르면 바로 이 화면에서 미리 바뀌고, 자동 저장됩니다.</p>
-            </div>
-            <div class="admin-image-grid">
-              <article class="card admin-image-card">
-                <img src={selectedAssets.heroPrimary.src} alt={selectedAssets.heroPrimary.alt} data-admin-preview="heroPrimary" />
-                <div>
-                  <strong>메인 대표 사진</strong>
-                  <p class="note">첫 화면 가장 큰 사진</p>
-                  <input type="file" accept="image/*" data-admin-file="heroPrimary" />
-                  <button type="button" class="button secondary admin-clear-image" data-admin-clear="heroPrimary">기본 사진으로 되돌리기</button>
-                </div>
-              </article>
-              <article class="card admin-image-card">
-                <img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} data-admin-preview="storeView" />
-                <div>
-                  <strong>매장 전경 사진</strong>
-                  <p class="note">브랜드 소개 / 오시는 길에 사용</p>
-                  <input type="file" accept="image/*" data-admin-file="storeView" />
-                  <button type="button" class="button secondary admin-clear-image" data-admin-clear="storeView">기본 사진으로 되돌리기</button>
-                </div>
-              </article>
-              <article class="card admin-image-card">
-                <img src={selectedAssets.heroSecondary.src} alt={selectedAssets.heroSecondary.alt} data-admin-preview="heroSecondary" />
-                <div>
-                  <strong>문의 보조 사진</strong>
-                  <p class="note">문의 페이지에 들어가는 사진</p>
-                  <input type="file" accept="image/*" data-admin-file="heroSecondary" />
-                  <button type="button" class="button secondary admin-clear-image" data-admin-clear="heroSecondary">기본 사진으로 되돌리기</button>
-                </div>
-              </article>
-            </div>
-          </section>
+          <AdminSection title="4. 대표 사진 3장" note="사진을 고르면 바로 이 화면과 미리보기에서 바뀝니다. 단, 업로드한 사진은 이 브라우저에서만 임시 저장됩니다.">
+            <AdminImageSlots slots={adminImageSlots} />
+          </AdminSection>
+
+          <AdminSection title="5. 갤러리 순서 / 노출" note="드래그 대신 위/아래 버튼으로 순서를 바꾸고, 노출 여부를 켜고 끕니다.">
+            <AdminGalleryManager items={adminGalleryItems} />
+          </AdminSection>
         </form>
 
         <aside class="admin-side-column">
@@ -195,12 +89,20 @@ const adminDefaults = {
               <p id="summary-address"></p>
             </div>
             <div class="admin-summary-block">
+              <strong>인스타그램</strong>
+              <p id="summary-instagram"></p>
+            </div>
+            <div class="admin-summary-block">
               <strong>메인 제목</strong>
               <p id="summary-home-title"></p>
             </div>
             <div class="admin-summary-block">
               <strong>문의 안내문</strong>
               <p id="summary-contact-body"></p>
+            </div>
+            <div class="admin-summary-block">
+              <strong>갤러리 노출 상태</strong>
+              <p id="summary-gallery"></p>
             </div>
           </section>
 
@@ -209,8 +111,9 @@ const adminDefaults = {
             <ol class="simple-list note">
               <li>먼저 전화번호와 운영시간부터 수정</li>
               <li>그다음 메인 제목과 소개문 확인</li>
-              <li>마지막으로 사진 3장만 교체</li>
-              <li>미리보기로 확인 후 확정본만 반영</li>
+              <li>외부 링크가 맞는지 꼭 확인</li>
+              <li>갤러리는 위/아래 버튼으로 순서만 정리</li>
+              <li>대표 사진 업로드는 미리보기용 임시 저장일 수 있으니 반영 파일 안내를 함께 확인</li>
             </ol>
           </section>
         </aside>
@@ -218,49 +121,32 @@ const adminDefaults = {
     </div>
   </section>
 
-  <script define:vars={{ adminDefaults }}>
-    const DRAFT_KEY = 'vine-admin-draft-v1';
-    const defaults = JSON.parse(JSON.stringify(adminDefaults));
+  <script id="admin-bootstrap" type="application/json" set:html={JSON.stringify(adminBootstrap)}></script>
 
-    const clone = (value) => JSON.parse(JSON.stringify(value));
+  <script>
+    import {
+      buildPublishPayload,
+      cloneValue,
+      createEmptyDraft,
+      normalizeGalleryItems,
+      pathGet,
+      pathSet,
+      readDraftFromStorage,
+      serializeDraft,
+      stampDraft,
+    } from '../lib/admin-draft';
+
+    const bootstrap = JSON.parse(document.querySelector('#admin-bootstrap')?.textContent ?? '{}');
+    const storageKey = bootstrap.storageKey;
+    const defaults = createEmptyDraft(bootstrap.defaults);
+
     const form = document.querySelector('#admin-form');
+    const galleryList = document.querySelector('#admin-gallery-list');
     const statusEl = document.querySelector('#admin-status');
     const statusBadgeEl = document.querySelector('#admin-status-badge');
     let saveTimer = null;
 
-    const pathGet = (obj, path) => path.split('.').reduce((acc, key) => acc?.[key], obj);
-    const pathSet = (obj, path, value) => {
-      const keys = path.split('.');
-      const last = keys.pop();
-      const target = keys.reduce((acc, key) => {
-        if (!acc[key] || typeof acc[key] !== 'object') acc[key] = {};
-        return acc[key];
-      }, obj);
-      target[last] = value;
-    };
-
-    const makePhoneHref = (phone) => `tel:${String(phone ?? '').replace(/[^0-9+]/g, '')}`;
-
-    const mergeDeep = (base, incoming) => ({
-      ...base,
-      ...incoming,
-      business: { ...base.business, ...(incoming?.business || {}) },
-      home: { ...base.home, ...(incoming?.home || {}) },
-      locationPage: { ...base.locationPage, ...(incoming?.locationPage || {}) },
-      contactPage: { ...base.contactPage, ...(incoming?.contactPage || {}) },
-      assetSlots: { ...base.assetSlots, ...(incoming?.assetSlots || {}) },
-    });
-
-    const readDraft = () => {
-      try {
-        const raw = localStorage.getItem(DRAFT_KEY);
-        return raw ? mergeDeep(clone(defaults), JSON.parse(raw)) : clone(defaults);
-      } catch {
-        return clone(defaults);
-      }
-    };
-
-    let state = readDraft();
+    let state = readDraftFromStorage(storageKey, defaults);
 
     const setSavedState = (saved) => {
       statusBadgeEl.textContent = saved ? '자동 저장됨' : '저장 중';
@@ -268,32 +154,24 @@ const adminDefaults = {
       statusBadgeEl.classList.toggle('is-dirty', !saved);
     };
 
-    const fillForm = () => {
-      form.querySelectorAll('input[name], textarea[name]').forEach((field) => {
-        field.value = pathGet(state, field.name) ?? '';
-      });
-    };
-
-    const updateSummary = () => {
-      document.querySelector('#summary-phone').textContent = state.business.phone;
-      document.querySelector('#summary-hours').textContent = state.business.hours;
-      document.querySelector('#summary-address').textContent = state.business.address;
-      document.querySelector('#summary-home-title').textContent = state.home.heroTitle;
-      document.querySelector('#summary-contact-body').textContent = state.contactPage.heroBody;
-      document.querySelectorAll('[data-admin-preview]').forEach((img) => {
-        const key = img.getAttribute('data-admin-preview');
-        const src = state.assetSlots[key];
-        if (src) img.src = src;
-      });
-    };
-
     const setStatus = (message, saved = true) => {
       statusEl.textContent = message;
       setSavedState(saved);
     };
 
+    const downloadJson = (filename, data) => {
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      link.click();
+      URL.revokeObjectURL(url);
+    };
+
     const persistDraft = (message = `자동 저장되었습니다. (${new Date().toLocaleString('ko-KR')})`) => {
-      localStorage.setItem(DRAFT_KEY, JSON.stringify(state));
+      state = stampDraft(state);
+      window.localStorage.setItem(storageKey, JSON.stringify(state));
       setStatus(message, true);
     };
 
@@ -303,19 +181,112 @@ const adminDefaults = {
       saveTimer = window.setTimeout(() => persistDraft(), 500);
     };
 
+    const fillForm = () => {
+      form.querySelectorAll('input[name], textarea[name]').forEach((field) => {
+        field.value = pathGet(state, field.name) ?? '';
+      });
+    };
+
+    const sortedGallery = () => normalizeGalleryItems(state.gallery, defaults.gallery);
+
+    const updateSummary = () => {
+      document.querySelector('#summary-phone').textContent = state.business.phone;
+      document.querySelector('#summary-hours').textContent = state.business.hours;
+      document.querySelector('#summary-address').textContent = state.business.address;
+      document.querySelector('#summary-instagram').textContent = state.business.instagram;
+      document.querySelector('#summary-home-title').textContent = state.home.heroTitle;
+      document.querySelector('#summary-contact-body').textContent = state.contactPage.heroBody;
+
+      const visibleCount = sortedGallery().filter((item) => item.visible).length;
+      document.querySelector('#summary-gallery').textContent = `${visibleCount}장 노출 / 총 ${state.gallery.length}장 관리중`;
+
+      document.querySelectorAll('[data-admin-preview]').forEach((img) => {
+        const key = img.getAttribute('data-admin-preview');
+        const src = state.assetSlots[key];
+        if (src) img.src = src;
+      });
+    };
+
+    const renderGalleryList = () => {
+      state.gallery = sortedGallery();
+      const orderMap = new Map(state.gallery.map((item) => [item.key, item]));
+      const cards = Array.from(galleryList.querySelectorAll('[data-admin-gallery-item]'));
+
+      cards
+        .sort((a, b) => {
+          const first = orderMap.get(a.getAttribute('data-admin-gallery-item'));
+          const second = orderMap.get(b.getAttribute('data-admin-gallery-item'));
+          return (first?.order ?? 0) - (second?.order ?? 0);
+        })
+        .forEach((card) => {
+          const key = card.getAttribute('data-admin-gallery-item');
+          const item = orderMap.get(key);
+          if (!item) return;
+
+          card.dataset.adminGalleryVisible = String(item.visible);
+          card.classList.toggle('is-hidden', !item.visible);
+          galleryList.appendChild(card);
+
+          const label = card.querySelector(`[data-admin-gallery-order-label="${key}"]`);
+          if (label) {
+            const originalTitle = label.textContent.replace(/^\d+\.\s*/, '');
+            label.textContent = `${item.order}. ${originalTitle}`;
+          }
+
+          const note = card.querySelector('.note');
+          if (note) note.textContent = item.visible ? '현재 사이트에 보이는 사진' : '현재 사이트에서 숨겨진 사진';
+
+          const toggleButton = card.querySelector('[data-admin-gallery-action="toggle"]');
+          if (toggleButton instanceof HTMLButtonElement) {
+            toggleButton.textContent = item.visible ? '숨기기' : '보이기';
+          }
+        });
+    };
+
+    const moveGalleryItem = (key, direction) => {
+      const items = sortedGallery();
+      const index = items.findIndex((item) => item.key === key);
+      const targetIndex = index + direction;
+      if (index < 0 || targetIndex < 0 || targetIndex >= items.length) return;
+      [items[index], items[targetIndex]] = [items[targetIndex], items[index]];
+      state.gallery = items.map((item, itemIndex) => ({ ...item, order: itemIndex + 1 }));
+      renderGalleryList();
+      updateSummary();
+      persistDraft('갤러리 순서를 저장했습니다.');
+    };
+
+    const toggleGalleryItem = (key) => {
+      state.gallery = sortedGallery().map((item) => (item.key === key ? { ...item, visible: !item.visible } : item));
+      renderGalleryList();
+      updateSummary();
+      persistDraft('갤러리 노출 상태를 저장했습니다.');
+    };
+
     fillForm();
+    renderGalleryList();
     updateSummary();
-    setStatus(localStorage.getItem(DRAFT_KEY) ? '이 브라우저에 저장된 초안을 불러왔습니다.' : '기본값을 불러왔습니다.', true);
+    setStatus(window.localStorage.getItem(storageKey) ? '이 브라우저에 저장된 초안을 불러왔습니다.' : '기본값을 불러왔습니다.', true);
 
     form.addEventListener('input', (event) => {
       const target = event.target;
       if (!(target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement)) return;
       pathSet(state, target.name, target.value);
       if (target.name === 'business.phone') {
-        state.business.phoneHref = makePhoneHref(target.value);
+        state.business.phoneHref = `tel:${String(target.value ?? '').replace(/[^0-9+]/g, '')}`;
       }
       updateSummary();
       scheduleSave();
+    });
+
+    galleryList.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLButtonElement)) return;
+      const action = target.dataset.adminGalleryAction;
+      const key = target.dataset.adminGalleryKey;
+      if (!action || !key) return;
+      if (action === 'up') moveGalleryItem(key, -1);
+      if (action === 'down') moveGalleryItem(key, 1);
+      if (action === 'toggle') toggleGalleryItem(key);
     });
 
     document.querySelectorAll('[data-admin-file]').forEach((input) => {
@@ -327,7 +298,7 @@ const adminDefaults = {
         reader.onload = () => {
           state.assetSlots[target.dataset.adminFile] = String(reader.result || '');
           updateSummary();
-          persistDraft(`${file.name} 사진을 저장했습니다.`);
+          persistDraft(`${file.name} 사진을 저장했습니다. 이 사진은 현재 브라우저 초안에서만 보입니다.`);
         };
         reader.readAsDataURL(file);
       });
@@ -353,9 +324,10 @@ const adminDefaults = {
 
     document.querySelector('#reset-draft')?.addEventListener('click', () => {
       if (saveTimer) window.clearTimeout(saveTimer);
-      localStorage.removeItem(DRAFT_KEY);
-      state = clone(defaults);
+      window.localStorage.removeItem(storageKey);
+      state = cloneValue(defaults);
       fillForm();
+      renderGalleryList();
       updateSummary();
       document.querySelectorAll('[data-admin-file]').forEach((input) => {
         if (input instanceof HTMLInputElement) input.value = '';
@@ -364,14 +336,20 @@ const adminDefaults = {
     });
 
     document.querySelector('#export-draft')?.addEventListener('click', () => {
-      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'vine-admin-draft.json';
-      link.click();
-      URL.revokeObjectURL(url);
+      downloadJson('vine-admin-draft.json', serializeDraft(state));
       setStatus('현재 초안을 JSON 파일로 내보냈습니다.', true);
+    });
+
+    document.querySelector('#export-publish')?.addEventListener('click', () => {
+      const payload = buildPublishPayload(state, defaults);
+      downloadJson('vine-admin-publish.json', JSON.stringify(payload, null, 2));
+
+      if (payload.localOnlyAssetSlots.length > 0) {
+        setStatus(`반영 파일을 저장했습니다. 다만 ${payload.localOnlyAssetSlots.join(', ')} 사진은 브라우저 임시 업로드라 수동 교체가 필요합니다.`, true);
+        return;
+      }
+
+      setStatus('사이트 반영 파일을 저장했습니다.', true);
     });
 
     const openPreview = (path) => window.open(`${path}?draft=1`, '_blank', 'noopener,noreferrer');

@@ -1,0 +1,25 @@
+---
+import type { AdminFieldDef } from '../../data/admin-schema';
+
+interface Props {
+  fields: AdminFieldDef[];
+  columns?: 'grid-3' | 'stack';
+}
+
+const { fields, columns = 'stack' } = Astro.props;
+const wrapperClass = columns === 'grid-3' ? 'grid-3' : 'admin-field-stack';
+---
+
+<div class={wrapperClass}>
+  {fields.map((field) => (
+    <label class="admin-field">
+      <span>{field.label}</span>
+      {field.type === 'textarea' ? (
+        <textarea name={field.name} rows={field.rows ?? 4}></textarea>
+      ) : (
+        <input name={field.name} type={field.type === 'url' ? 'url' : 'text'} inputmode={field.inputmode} />
+      )}
+      {field.hint && <small>{field.hint}</small>}
+    </label>
+  ))}
+</div>
