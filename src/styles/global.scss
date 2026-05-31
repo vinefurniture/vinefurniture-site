@@ -158,6 +158,15 @@ main {
   background: linear-gradient(180deg, #fdfcf9 0%, #ffffff 100%);
 }
 
+.section[id],
+.hero[id] {
+  scroll-margin-top: 6.5rem;
+}
+
+.home-gallery-actions {
+  margin-top: 1.25rem;
+}
+
 .hero-grid,
 .two-column {
   display: grid;

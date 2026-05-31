@@ -22,11 +22,23 @@ const logoAsset = selectedAssets.logoPrimary;
 
     <nav class="site-nav" aria-label="주요 메뉴">
       <ul>
-        {navigationItems.map((item) => (
-          <li>
-            <a href={item.href} class={pathname === item.href ? 'active' : ''}>{item.label}</a>
-          </li>
-        ))}
+        {navigationItems.map((item) => {
+          const isActive = item.href === '/gallery'
+            ? pathname === '/gallery'
+            : item.href === '/brand'
+              ? pathname === '/brand'
+              : item.href === '/location'
+                ? pathname === '/location'
+                : item.href === '/contact'
+                  ? pathname === '/contact'
+                  : false;
+
+          return (
+            <li>
+              <a href={item.href} class={isActive ? 'active' : ''}>{item.label}</a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
 
