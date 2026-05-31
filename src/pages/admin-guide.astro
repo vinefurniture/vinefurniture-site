@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { pageContent, siteMeta } from '../data/site';
+
+const home = pageContent.home;
+const locationPage = pageContent.location;
+const contactPage = pageContent.contact;
+---
+
+<Layout title="관리자 빠른 안내 | 바인퍼니처" description="바인퍼니처 운영자를 위한 한 장짜리 관리자 사용 안내입니다.">
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container" style="display:grid; gap:1.25rem;">
+      <div class="card" style="display:grid; gap:1rem;">
+        <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <p class="eyebrow">Quick Guide</p>
+            <h1 style="margin-bottom:0.5rem;">바인퍼니처 관리자 한 장 안내</h1>
+            <p style="margin-bottom:0; color:var(--color-muted);">자주 바꾸는 정보만 빠르게 수정하고, 마지막에 미리보기와 반영 파일만 확인하면 됩니다.</p>
+          </div>
+          <button type="button" class="button" id="print-guide">이 페이지 인쇄하기</button>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <strong>대표 전화</strong>
+            <p style="margin-top:0.5rem; margin-bottom:0;">{siteMeta.phone}</p>
+          </article>
+          <article class="card">
+            <strong>운영시간</strong>
+            <p style="margin-top:0.5rem; margin-bottom:0;">{siteMeta.hours}</p>
+          </article>
+          <article class="card">
+            <strong>주소</strong>
+            <p style="margin-top:0.5rem; margin-bottom:0;">{siteMeta.address}</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h2 style="font-size:1.25rem;">1. 먼저 수정할 것</h2>
+          <ol class="simple-list note">
+            <li>전화번호</li>
+            <li>운영시간</li>
+            <li>주소</li>
+            <li>메인 제목 / 소개문</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h2 style="font-size:1.25rem;">2. 그 다음 확인</h2>
+          <ol class="simple-list note">
+            <li>인스타그램 링크</li>
+            <li>네이버 블로그 링크</li>
+            <li>네이버 플레이스 링크</li>
+            <li>갤러리 순서 / 숨김 여부</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h2 style="font-size:1.25rem;">3. 마지막 확인</h2>
+          <ol class="simple-list note">
+            <li>메인 화면 보기</li>
+            <li>오시는 길 보기</li>
+            <li>문의 화면 보기</li>
+            <li>문구 / 전화 / 링크 확인</li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h2 style="font-size:1.25rem;">문구만 바꿨을 때</h2>
+          <p class="note">아래 2단계만 기억하면 됩니다.</p>
+          <ol class="simple-list note">
+            <li><strong>사이트 반영 파일 내보내기</strong> 클릭</li>
+            <li>저장된 <code>vine-admin-publish.json</code> 파일을 유지보수자에게 전달</li>
+          </ol>
+        </article>
+        <article class="card" style="background:#fff6e8; border-color:#f0d9a8;">
+          <h2 style="font-size:1.25rem;">대표 사진도 바꿨을 때</h2>
+          <p class="note">사진은 먼저 이 브라우저 안에만 임시 저장됩니다.</p>
+          <ol class="simple-list note">
+            <li><strong>초안 JSON 내보내기</strong> 클릭</li>
+            <li><code>vine-admin-draft.json</code> 파일을 유지보수자에게 전달</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h2 style="font-size:1.25rem;">유지보수자 반영 명령</h2>
+          <p class="note" style="margin-bottom:0.5rem;">사진 포함 변경일 때</p>
+          <pre class="admin-guide-code">npm run admin:extract-assets -- ./vine-admin-draft.json --write
+npm run admin:import -- ./vine-admin-publish.json --write
+npm run build
+npm run preview:check</pre>
+        </article>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h2 style="font-size:1.25rem;">현재 메인 제목</h2>
+          <p class="note" style="margin-bottom:0;">{home.heroTitle}</p>
+        </article>
+        <article class="card">
+          <h2 style="font-size:1.25rem;">오시는 길 안내문</h2>
+          <p class="note" style="margin-bottom:0;">{locationPage.heroBody}</p>
+        </article>
+        <article class="card">
+          <h2 style="font-size:1.25rem;">문의 안내문</h2>
+          <p class="note" style="margin-bottom:0;">{contactPage.heroBody}</p>
+        </article>
+      </div>
+
+      <div class="card" style="display:grid; gap:0.75rem;">
+        <h2 style="margin-bottom:0;">꼭 기억할 점</h2>
+        <ul class="simple-list note">
+          <li>저장은 자동으로 됩니다.</li>
+          <li><code>처음 상태로 되돌리기</code>를 누르면 현재 브라우저 초안이 지워집니다.</li>
+          <li>사진을 바꾼 경우에는 <code>사이트 반영 파일</code>만 보내면 실제 사이트 사진은 바뀌지 않습니다.</li>
+          <li>사진 변경이 있으면 반드시 <code>초안 JSON</code>을 먼저 내보내야 합니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelector('#print-guide')?.addEventListener('click', () => window.print());
+  </script>
+</Layout>

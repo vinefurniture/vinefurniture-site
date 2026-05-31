@@ -73,6 +73,12 @@ const pageChecks = [
       { fragment: 'data-draft-href="business.blog"', label: 'contact blog href binding', expectedCount: 2 },
     ],
   },
+  {
+    route: '/admin-guide',
+    file: 'admin-guide/index.html',
+    titleFragment: '관리자 빠른 안내 | 바인퍼니처',
+    requiredBindings: [{ fragment: 'src="/admin/admin-preview.js"', label: 'preview script include' }],
+  },
 ];
 
 const assetChecks = [

@@ -122,6 +122,7 @@ const adminBootstrap = {
               <li>외부 링크가 맞는지 꼭 확인</li>
               <li>갤러리는 위/아래 버튼으로 순서만 정리</li>
               <li>대표 사진 업로드는 미리보기용 임시 저장일 수 있으니 반영 파일 안내를 함께 확인</li>
+              <li>추가 작업 열기 안의 <strong>사용설명서 열기</strong>로 한 장짜리 안내를 바로 볼 수 있습니다</li>
             </ol>
           </section>
         </aside>
@@ -380,5 +381,6 @@ const adminBootstrap = {
     document.querySelector('#open-home-preview')?.addEventListener('click', () => openPreview('/'));
     document.querySelector('#open-location-preview')?.addEventListener('click', () => openPreview('/location'));
     document.querySelector('#open-contact-preview')?.addEventListener('click', () => openPreview('/contact'));
+    document.querySelector('#open-admin-guide')?.addEventListener('click', () => window.open('/admin-guide', '_blank', 'noopener,noreferrer'));
   </script>
 </Layout>

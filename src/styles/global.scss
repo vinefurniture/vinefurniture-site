@@ -663,6 +663,17 @@ button {
   width: 100%;
 }
 
+.admin-guide-code {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #1f1f1f;
+  color: #f6f2ea;
+  overflow-x: auto;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .admin-gallery-list {
   display: grid;
   gap: 0.9rem;
