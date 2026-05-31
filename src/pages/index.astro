@@ -19,7 +19,7 @@ const homePromo = home.promo;
         <p data-draft-field="home.heroBody">{home.heroBody}</p>
         <div class="button-group">
           <a class="button" href={home.heroPrimaryCtaHref} data-draft-href="business.phoneHref">{home.heroPrimaryCtaLabel}</a>
-          <a class="button secondary" href={home.heroSecondaryCtaHref}>{home.heroSecondaryCtaLabel}</a>
+          <a class="button secondary" href={home.heroSecondaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{home.heroSecondaryCtaLabel}</a>
         </div>
       </div>
 
@@ -86,8 +86,8 @@ const homePromo = home.promo;
             <p class="note home-promo-note" data-draft-field="homePromo.body">{homePromo?.body}</p>
           </div>
           <div class="button-group cta-panel-actions home-promo-actions">
-            <a class="button" href={home.heroPrimaryCtaHref} data-draft-href="business.phoneHref">전화로 상담 예약</a>
-            <a class="button secondary" href={home.visitPrimaryCtaHref}>오시는 길 보기</a>
+            <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">네이버 플레이스로 방문 예약</a>
+            <a class="button secondary" href={home.heroPrimaryCtaHref} data-draft-href="business.phoneHref">전화 문의하기</a>
           </div>
         </article>
       </div>
@@ -100,8 +100,8 @@ const homePromo = home.promo;
         <h2>{home.visitTitle}</h2>
         <p>{home.visitBody}</p>
         <div class="button-group">
-          <a class="button" href={home.visitPrimaryCtaHref}>{home.visitPrimaryCtaLabel}</a>
-          <a class="button secondary" href={home.visitSecondaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{home.visitSecondaryCtaLabel}</a>
+          <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{home.visitPrimaryCtaLabel}</a>
+          <a class="button secondary" href={home.visitSecondaryCtaHref} data-draft-href="business.phoneHref">{home.visitSecondaryCtaLabel}</a>
         </div>
       </div>
       <div class="card-image-wrap hero-media-small">

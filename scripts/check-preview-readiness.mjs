@@ -9,7 +9,7 @@ const assetManifest = JSON.parse(readFileSync(join(root, 'src/data/vine-asset-ma
 const visibleGalleryCount = assetManifest.gallery.filter((asset) => asset.visible !== false).length;
 const homeGalleryCount = Math.min(4, visibleGalleryCount);
 const homePromoEnabled = siteContent.home?.promo?.enabled !== false;
-const homePhoneHrefCount = homePromoEnabled ? 3 : 2;
+const homePhoneHrefCount = homePromoEnabled ? 4 : 2;
 
 const pageChecks = [
   {
