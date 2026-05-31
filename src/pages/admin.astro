@@ -28,8 +28,8 @@ const adminBootstrap = {
         <p class="eyebrow">Simple Admin</p>
         <h1>쉽게 수정하는 바인퍼니처 관리자</h1>
         <p>
-          이 화면에서는 <strong>전화번호, 운영시간, 주소, 외부 링크, 메인 문구, 대표 사진 3장, 갤러리 순서</strong>만 바꿉니다.
-          어려운 설정은 숨기고, 자주 바꾸는 것만 크게 보여드렸습니다.
+          이 화면에서는 <strong>전화번호, 운영시간, 주소, 링크, 메인 문구, 대표 사진 3장, 갤러리 순서</strong>만 바꿉니다.
+          어려운 설정은 빼고, 자주 바꾸는 것만 크게 보이게 정리했습니다.
         </p>
 
         <div class="admin-step-strip">
@@ -39,7 +39,7 @@ const adminBootstrap = {
           </article>
           <article class="admin-step-card">
             <strong>2. 미리보기 확인</strong>
-            <p>메인 · 오시는 길 · 문의를 열어서 바로 확인합니다.</p>
+            <p>메인 · 오시는 길 · 문의를 눌러서 바로 확인합니다.</p>
           </article>
           <article class="admin-step-card">
             <strong>3. 파일 저장</strong>
@@ -64,7 +64,7 @@ const adminBootstrap = {
             <AdminTextFields fields={adminCopyFields} columns="stack" />
           </AdminSection>
 
-          <AdminSection title="4. 대표 사진 3장" note="사진을 고르면 이 화면과 미리보기에서 먼저 바뀝니다. 실제 사이트 반영은 유지보수자가 마무리합니다.">
+          <AdminSection title="4. 대표 사진 3장" note="사진을 고르면 이 화면과 미리보기에서 먼저 바뀝니다. 실제 사이트 반영은 유지보수자가 마지막으로 처리합니다.">
             <AdminImageSlots slots={adminImageSlots} />
           </AdminSection>
 
@@ -123,7 +123,7 @@ const adminBootstrap = {
               <li>갤러리는 위/아래 버튼으로 순서만 정리</li>
               <li>문구만 바꿨으면 <strong>문구 반영 파일 저장</strong> 버튼 사용</li>
               <li>사진도 바꿨으면 <strong>사진 변경 파일 저장</strong> 버튼 사용</li>
-              <li><strong>한 장 안내 보기</strong> 버튼으로 종이 안내문을 바로 열 수 있습니다</li>
+              <li>헷갈리면 <strong>한 장 안내 보기</strong>를 눌러 종이 안내문을 바로 열기</li>
             </ol>
           </section>
         </aside>
