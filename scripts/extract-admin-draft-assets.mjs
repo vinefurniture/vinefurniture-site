@@ -150,3 +150,4 @@ if (extractionResults.length) {
 if (publishPayload.localOnlyAssetSlots.length) {
   console.log(`[WARN] Remaining local-only slots: ${publishPayload.localOnlyAssetSlots.join(', ')}`);
 }
+console.log(`[NEXT] Validate with: npm run admin:validate -- ${publishOutputPath}`);

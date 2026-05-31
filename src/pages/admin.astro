@@ -29,21 +29,21 @@ const adminBootstrap = {
         <h1>쉽게 수정하는 바인퍼니처 관리자</h1>
         <p>
           이 화면에서는 <strong>전화번호, 운영시간, 주소, 외부 링크, 메인 문구, 대표 사진 3장, 갤러리 순서</strong>만 바꿉니다.
-          어려운 설정은 숨기고, 자주 쓰는 항목만 남겼습니다.
+          어려운 설정은 숨기고, 자주 바꾸는 것만 크게 보여드렸습니다.
         </p>
 
         <div class="admin-step-strip">
           <article class="admin-step-card">
             <strong>1. 내용 수정</strong>
-            <p>자주 바꾸는 항목만 입력하면 자동 저장됩니다.</p>
+            <p>전화, 운영시간, 주소부터 바꾸면 됩니다.</p>
           </article>
           <article class="admin-step-card">
             <strong>2. 미리보기 확인</strong>
-            <p>버튼을 눌러 실제 페이지에서 초안을 확인합니다.</p>
+            <p>메인 · 오시는 길 · 문의를 열어서 바로 확인합니다.</p>
           </article>
           <article class="admin-step-card">
-            <strong>3. 사이트 반영 파일 내보내기</strong>
-            <p>최종 확인 후 관리자가 적용할 JSON 파일을 저장합니다.</p>
+            <strong>3. 파일 저장</strong>
+            <p>문구만 바꿨으면 문구 반영 파일, 사진도 바꿨으면 사진 변경 파일을 저장합니다.</p>
           </article>
         </div>
       </div>
@@ -52,23 +52,23 @@ const adminBootstrap = {
 
       <div class="admin-grid">
         <form id="admin-form" class="admin-form" autocomplete="off">
-          <AdminSection title="1. 매장 기본 정보" note="전화번호와 운영시간은 고객이 가장 자주 보는 정보입니다.">
+          <AdminSection title="1. 매장 기본 정보" note="가장 먼저 보는 정보입니다. 전화번호와 운영시간부터 확인해주세요.">
             <AdminTextFields fields={adminBusinessFields} columns="grid-3" />
           </AdminSection>
 
-          <AdminSection title="2. 외부 채널 링크" note="푸터와 문의/오시는 길 버튼에 연결되는 링크입니다.">
+          <AdminSection title="2. 외부 채널 링크" note="인스타그램, 블로그, 네이버 플레이스로 연결되는 버튼입니다.">
             <AdminTextFields fields={adminLinkFields} columns="stack" />
           </AdminSection>
 
-          <AdminSection title="3. 메인/안내 문구" note="첫 화면과 주요 안내 페이지에서 보이는 핵심 소개 문구입니다.">
+          <AdminSection title="3. 메인/안내 문구" note="너무 길지 않게, 한눈에 읽히는 문장으로 적는 것이 좋습니다.">
             <AdminTextFields fields={adminCopyFields} columns="stack" />
           </AdminSection>
 
-          <AdminSection title="4. 대표 사진 3장" note="사진을 고르면 바로 이 화면과 미리보기에서 바뀝니다. 단, 업로드한 사진은 이 브라우저에서만 임시 저장됩니다.">
+          <AdminSection title="4. 대표 사진 3장" note="사진을 고르면 이 화면과 미리보기에서 먼저 바뀝니다. 실제 사이트 반영은 유지보수자가 마무리합니다.">
             <AdminImageSlots slots={adminImageSlots} />
           </AdminSection>
 
-          <AdminSection title="5. 갤러리 순서 / 노출" note="드래그 대신 위/아래 버튼으로 순서를 바꾸고, 노출 여부를 켜고 끕니다.">
+          <AdminSection title="5. 갤러리 순서 / 노출" note="위/아래 버튼으로 순서를 바꾸고, 숨기기/보이기로 노출을 정리합니다.">
             <AdminGalleryManager items={adminGalleryItems} />
           </AdminSection>
         </form>
@@ -115,14 +115,15 @@ const adminBootstrap = {
           </section>
 
           <section class="card admin-summary-card">
-            <h2>간단 사용 팁</h2>
+            <h2>오늘 할 일</h2>
             <ol class="simple-list note">
               <li>먼저 전화번호와 운영시간부터 수정</li>
               <li>그다음 메인 제목과 소개문 확인</li>
               <li>외부 링크가 맞는지 꼭 확인</li>
               <li>갤러리는 위/아래 버튼으로 순서만 정리</li>
-              <li>대표 사진 업로드는 미리보기용 임시 저장일 수 있으니 반영 파일 안내를 함께 확인</li>
-              <li>추가 작업 열기 안의 <strong>사용설명서 열기</strong>로 한 장짜리 안내를 바로 볼 수 있습니다</li>
+              <li>문구만 바꿨으면 <strong>문구 반영 파일 저장</strong> 버튼 사용</li>
+              <li>사진도 바꿨으면 <strong>사진 변경 파일 저장</strong> 버튼 사용</li>
+              <li><strong>한 장 안내 보기</strong> 버튼으로 종이 안내문을 바로 열 수 있습니다</li>
             </ol>
           </section>
         </aside>
@@ -362,7 +363,7 @@ const adminBootstrap = {
 
     document.querySelector('#export-draft')?.addEventListener('click', () => {
       downloadJson('vine-admin-draft.json', serializeDraft(state));
-      setStatus('현재 초안을 JSON 파일로 내보냈습니다.', true);
+      setStatus('사진 변경 파일을 저장했습니다. 유지보수자에게 전달해주세요.', true);
     });
 
     document.querySelector('#export-publish')?.addEventListener('click', () => {
@@ -370,11 +371,11 @@ const adminBootstrap = {
       downloadJson('vine-admin-publish.json', JSON.stringify(payload, null, 2));
 
       if (payload.localOnlyAssetSlots.length > 0) {
-        setStatus(`반영 파일을 저장했습니다. 다만 ${payload.localOnlyAssetSlots.join(', ')} 사진은 브라우저 임시 업로드라 수동 교체가 필요합니다.`, true);
+        setStatus(`문구 반영 파일을 저장했습니다. 다만 ${payload.localOnlyAssetSlots.join(', ')} 사진은 별도 반영이 필요하니 사진 변경 파일도 함께 저장해주세요.`, true);
         return;
       }
 
-      setStatus('사이트 반영 파일을 저장했습니다.', true);
+      setStatus('문구 반영 파일을 저장했습니다.', true);
     });
 
     const openPreview = (path) => window.open(`${path}?draft=1`, '_blank', 'noopener,noreferrer');

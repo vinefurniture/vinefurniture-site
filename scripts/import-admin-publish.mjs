@@ -32,6 +32,16 @@ if (!payload?.business || !payload?.home || !payload?.locationPage || !payload?.
   process.exit(1);
 }
 
+const localOnlyAssetSlots = Object.entries(payload?.assetSlots ?? {})
+  .filter(([, value]) => typeof value === 'string' && value.startsWith('data:'))
+  .map(([key]) => key);
+
+if ((payload.localOnlyAssetSlots?.length ?? 0) > 0 || localOnlyAssetSlots.length > 0) {
+  console.error('[ERROR] publish payload still includes browser-local image data.');
+  console.error('[HINT] Run npm run admin:extract-assets -- ./vine-admin-draft.json --write first, then import the regenerated publish JSON.');
+  process.exit(1);
+}
+
 const nextSiteContent = clone(siteContent);
 const nextManifest = clone(manifest);
 const phoneHref = makePhoneHref(payload.business.phone);

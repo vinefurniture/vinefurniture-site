@@ -34,9 +34,11 @@ npm run admin:extract-assets -- ./vine-admin-draft.json --write
 프로젝트 루트에서:
 
 ```bash
+npm run admin:validate -- ./vine-admin-publish.json
 npm run admin:import -- ./vine-admin-publish.json
 ```
 
+- 필수값/링크/브라우저 임시 업로드 잔여 여부 먼저 확인
 - 변경 요약(JSON 출력) 확인
 - 갤러리 순서 / 숨김 수량 / 링크 값 확인
 

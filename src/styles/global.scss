@@ -541,6 +541,31 @@ button {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.admin-next-step-strip,
+.admin-action-buttons-export {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.admin-next-step-card {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.admin-next-step-card strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.admin-next-step-card p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
 .admin-inline-guide {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -584,7 +609,7 @@ button {
 
 .admin-action-buttons-secondary {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .admin-section-card h2,
@@ -979,7 +1004,9 @@ button {
   .admin-grid,
   .admin-image-grid,
   .admin-step-strip,
+  .admin-next-step-strip,
   .admin-action-buttons-primary,
+  .admin-action-buttons-export,
   .admin-action-buttons-secondary,
   .admin-inline-guide {
     grid-template-columns: 1fr;
