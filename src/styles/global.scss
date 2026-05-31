@@ -1069,6 +1069,10 @@ button {
     width: min(var(--container), calc(100% - 1.25rem));
   }
 
+  .hero {
+    padding-top: 2.5rem;
+  }
+
   .brand {
     gap: 0.65rem;
   }
@@ -1118,9 +1122,16 @@ button {
     border-radius: 1.15rem;
   }
 
+  .hero-media-large img,
+  .hero-media-small img,
+  .home-gallery-item .card-image-wrap img {
+    aspect-ratio: 4 / 3;
+  }
+
   .button-group {
     flex-direction: column;
     margin-top: 1.25rem;
+    gap: 0.7rem;
   }
 
   .button,
@@ -1150,6 +1161,8 @@ button {
     max-width: calc(100% - 1.5rem);
     padding: 0.4rem 0.75rem;
     border-radius: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
 
   .gallery-copy {
@@ -1157,10 +1170,32 @@ button {
     padding: 0.95rem;
   }
 
+  .gallery-copy strong {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .gallery-copy span {
+    font-size: 0.9rem;
+  }
+
   .gallery-summary-card,
   .cta-panel {
     padding: 1.15rem;
     border-radius: 1.15rem;
+  }
+
+  .home-promo-copy {
+    gap: 0.55rem;
+  }
+
+  .home-promo-note {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .home-promo-actions {
+    align-self: stretch;
   }
 
   .cta-panel-actions {
