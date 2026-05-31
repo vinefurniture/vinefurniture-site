@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import { galleryAssets, pageContent, selectedAssets } from '../data/site';
 
 const brand = pageContent.brand;
+const brandHeroAsset = galleryAssets.find((asset) => asset.key === 'galleryStorage01') ?? selectedAssets.storeView;
+const brandGalleryAssets = galleryAssets.filter((asset) => asset.key !== brandHeroAsset.key).slice(0, 4);
 ---
 
 <Layout
@@ -17,8 +19,8 @@ const brand = pageContent.brand;
         <p>{brand.heroBody}</p>
       </div>
       <div class="card-image-wrap hero-media-small">
-        <img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} />
-        <div class="overlay-note">매장 내부 전경</div>
+        <img src={brandHeroAsset.src} alt={brandHeroAsset.alt} />
+        <div class="overlay-note">브랜드 소개 대표 이미지</div>
       </div>
     </div>
   </section>
@@ -36,7 +38,7 @@ const brand = pageContent.brand;
     <div class="container">
       <h2>{brand.galleryTitle}</h2>
       <div class="grid-4 gallery-grid" style="margin-top:1.5rem;">
-        {galleryAssets.slice(1, 5).map((asset) => (
+        {brandGalleryAssets.map((asset) => (
           <article class="gallery-card">
             <div class="card-image-wrap">
               <img src={asset.src} alt={asset.alt} />

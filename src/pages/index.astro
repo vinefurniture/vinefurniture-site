@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { galleryAssets, pageContent, selectedAssets, siteMeta } from '../data/site';
 
 const home = pageContent.home;
+const homeGalleryAssets = galleryAssets.slice(0, 4);
 ---
 
 <Layout
@@ -59,8 +60,8 @@ const home = pageContent.home;
       <h2>{home.galleryTitle}</h2>
       <p class="note">{home.galleryNote}</p>
       <div class="grid-4 gallery-grid" style="margin-top:1.5rem;" data-draft-gallery-container="home" data-draft-gallery-limit="4">
-        {galleryAssets.map((asset, index) => (
-          <article class={`gallery-card home-gallery-item${index >= 4 ? ' is-gallery-extra' : ''}`} data-draft-gallery-item={asset.key} hidden={index >= 4}>
+        {homeGalleryAssets.map((asset) => (
+          <article class="gallery-card home-gallery-item" data-draft-gallery-item={asset.key}>
             <div class="card-image-wrap">
               <img src={asset.src} alt={asset.alt} />
             </div>

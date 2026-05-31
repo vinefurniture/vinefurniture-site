@@ -4,6 +4,9 @@ import { join } from 'node:path';
 const root = process.cwd();
 const dist = join(root, 'dist');
 const publicDir = join(root, 'public');
+const assetManifest = JSON.parse(readFileSync(join(root, 'src/data/vine-asset-manifest.json'), 'utf8'));
+const visibleGalleryCount = assetManifest.gallery.filter((asset) => asset.visible !== false).length;
+const homeGalleryCount = Math.min(4, visibleGalleryCount);
 
 const pageChecks = [
   {
@@ -17,7 +20,7 @@ const pageChecks = [
       { fragment: 'data-draft-image="heroPrimary"', label: 'home hero image binding' },
       { fragment: 'data-draft-image="storeView"', label: 'home store image binding' },
       { fragment: 'data-draft-gallery-container="home"', label: 'home gallery preview container' },
-      { fragment: 'data-draft-gallery-item=', label: 'home gallery preview item', expectedCount: 8 },
+      { fragment: 'data-draft-gallery-item=', label: 'home gallery preview item', expectedCount: homeGalleryCount },
       { fragment: 'data-draft-href="business.place"', label: 'home place href binding' },
       { fragment: 'data-draft-field="business.address"', label: 'shared address binding', expectedCount: 2 },
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding', expectedCount: 2 },
@@ -38,7 +41,7 @@ const pageChecks = [
     requiredBindings: [
       { fragment: 'src="/admin/admin-preview.js"', label: 'preview script include' },
       { fragment: 'data-draft-gallery-container="gallery"', label: 'gallery preview container' },
-      { fragment: 'data-draft-gallery-item=', label: 'gallery preview items', expectedCount: 8 },
+      { fragment: 'data-draft-gallery-item=', label: 'gallery preview items', expectedCount: visibleGalleryCount },
       { fragment: 'data-draft-href="business.phoneHref"', label: 'gallery phone CTA binding' },
     ],
   },
