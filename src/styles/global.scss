@@ -663,6 +663,68 @@ button {
   width: 100%;
 }
 
+.admin-guide-shell {
+  background: var(--color-surface);
+}
+
+.admin-guide-container,
+.admin-guide-hero,
+.admin-guide-step-card,
+.admin-guide-reminder-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-guide-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.admin-guide-title,
+.admin-guide-reminder-title {
+  margin-bottom: 0.5rem;
+}
+
+.admin-guide-lead,
+.admin-guide-mini-card p,
+.admin-guide-copy-text,
+.admin-guide-link-text,
+.admin-guide-tight-note {
+  margin-bottom: 0;
+}
+
+.admin-guide-print-note {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  background: #f5efe5;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+.admin-guide-mini-card p,
+.admin-guide-link-text {
+  margin-top: 0.5rem;
+}
+
+.admin-guide-link-text,
+.admin-guide-copy-text {
+  word-break: break-word;
+}
+
+.admin-guide-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.admin-guide-warning-card {
+  background: #fff6e8;
+  border-color: #f0d9a8;
+}
+
 .admin-guide-code {
   margin: 0;
   padding: 1rem;
@@ -672,6 +734,115 @@ button {
   overflow-x: auto;
   font-size: 0.92rem;
   line-height: 1.55;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  .site-header,
+  .site-footer,
+  .admin-guide-print-button {
+    display: none !important;
+  }
+
+  main {
+    overflow: visible;
+  }
+
+  .admin-guide-shell {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .admin-guide-container {
+    width: 100% !important;
+    gap: 0.7rem;
+  }
+
+  .admin-guide-hero,
+  .admin-guide-step-card,
+  .admin-guide-reminder-card,
+  .admin-guide-mini-card {
+    gap: 0.45rem;
+  }
+
+  .admin-guide-shell .card {
+    padding: 0.85rem;
+    border-radius: 0.9rem;
+    border-color: #d9d2c6;
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .admin-guide-head {
+    gap: 0.4rem;
+  }
+
+  .admin-guide-title {
+    margin-bottom: 0.25rem;
+    font-size: 20pt;
+  }
+
+  .admin-guide-card-title {
+    font-size: 12.5pt;
+  }
+
+  .admin-guide-lead,
+  .admin-guide-print-note,
+  .note,
+  .admin-guide-mini-card p,
+  .admin-guide-copy-text,
+  .admin-guide-link-text,
+  .admin-guide-code,
+  .simple-list {
+    font-size: 10.5pt;
+  }
+
+  .admin-guide-print-note {
+    padding: 0.6rem 0.8rem;
+    background: #f5f1ea;
+  }
+
+  .admin-guide-step-grid,
+  .admin-guide-flow-grid,
+  .admin-guide-copy-grid,
+  .admin-guide-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .admin-guide-current-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .admin-guide-reminder-card {
+    margin-top: 0;
+  }
+
+  .admin-guide-code {
+    padding: 0.8rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: visible;
+    background: #f3efe8;
+    color: #222;
+    border: 1px solid #d9d2c6;
+  }
 }
 
 .admin-gallery-list {
