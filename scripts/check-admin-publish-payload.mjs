@@ -23,8 +23,8 @@ const isNonEmptyString = (value) => typeof value === 'string' && value.trim().le
 const isHttpsUrl = (value) => /^https:\/\//.test(String(value ?? '').trim());
 const phoneDigits = String(payload?.business?.phone ?? '').replace(/[^0-9+]/g, '');
 
-if (!payload?.business || !payload?.home || !payload?.locationPage || !payload?.contactPage || !Array.isArray(payload?.gallery)) {
-  errors.push('필수 구조(business/home/locationPage/contactPage/gallery)가 부족합니다.');
+if (!payload?.business || !payload?.home || !payload?.homePromo || !payload?.locationPage || !payload?.contactPage || !Array.isArray(payload?.gallery)) {
+  errors.push('필수 구조(business/home/homePromo/locationPage/contactPage/gallery)가 부족합니다.');
 }
 
 const requiredStringFields = [
@@ -36,6 +36,9 @@ const requiredStringFields = [
   ['business.place', payload?.business?.place],
   ['home.heroTitle', payload?.home?.heroTitle],
   ['home.heroBody', payload?.home?.heroBody],
+  ['homePromo.eyebrow', payload?.homePromo?.eyebrow],
+  ['homePromo.title', payload?.homePromo?.title],
+  ['homePromo.body', payload?.homePromo?.body],
   ['locationPage.heroBody', payload?.locationPage?.heroBody],
   ['contactPage.heroBody', payload?.contactPage?.heroBody],
 ];
@@ -89,6 +92,8 @@ for (const item of payload?.gallery ?? []) {
 const summary = {
   inputPath,
   phone: payload?.business?.phone ?? '',
+  homePromoEnabled: payload?.homePromo?.enabled ?? null,
+  homePromoTitle: payload?.homePromo?.title ?? '',
   linkChecks: {
     instagram: payload?.business?.instagram ?? '',
     blog: payload?.business?.blog ?? '',

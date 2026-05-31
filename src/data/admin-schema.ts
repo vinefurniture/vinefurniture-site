@@ -9,7 +9,7 @@ export type AdminFieldDef = {
   label: string;
   hint?: string;
   rows?: number;
-  type?: 'text' | 'textarea' | 'url';
+  type?: 'text' | 'textarea' | 'url' | 'checkbox';
   inputmode?: string;
 };
 
@@ -46,6 +46,13 @@ export const adminCopyFields: AdminFieldDef[] = [
   { name: 'home.heroBody', label: '메인 소개문', rows: 5, type: 'textarea', hint: '매장 강점과 방문 유도를 짧게 적어주세요.' },
   { name: 'locationPage.heroBody', label: '오시는 길 소개문', rows: 4, type: 'textarea' },
   { name: 'contactPage.heroBody', label: '문의 페이지 소개문', rows: 4, type: 'textarea' },
+];
+
+export const adminPromoFields: AdminFieldDef[] = [
+  { name: 'homePromo.enabled', label: '홈에서 이벤트 프로모션 보이기', type: 'checkbox', hint: '체크를 끄면 메인 페이지에서 이벤트 안내가 숨겨집니다.' },
+  { name: 'homePromo.eyebrow', label: '이벤트 작은 제목', hint: '예: EVENT PROMOTION' },
+  { name: 'homePromo.title', label: '이벤트 제목', rows: 3, type: 'textarea', hint: '짧고 바로 이해되는 문장으로 적어주세요.' },
+  { name: 'homePromo.body', label: '이벤트 안내문', rows: 4, type: 'textarea', hint: '방문 유도나 상담 안내를 짧게 적어주세요.' },
 ];
 
 export const adminImageSlots: AdminImageSlotDef[] = [
@@ -100,6 +107,12 @@ export const adminDefaults: AdminDraft = {
   home: {
     heroTitle: pageContent.home.heroTitle,
     heroBody: pageContent.home.heroBody,
+  },
+  homePromo: {
+    enabled: pageContent.home.promo?.enabled !== false,
+    eyebrow: pageContent.home.promo?.eyebrow ?? 'EVENT PROMOTION',
+    title: pageContent.home.promo?.title ?? '',
+    body: pageContent.home.promo?.body ?? '',
   },
   locationPage: {
     heroBody: pageContent.location.heroBody,

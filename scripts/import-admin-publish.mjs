@@ -27,7 +27,7 @@ const payload = readJson(inputPath);
 const siteContent = readJson(siteContentPath);
 const manifest = readJson(manifestPath);
 
-if (!payload?.business || !payload?.home || !payload?.locationPage || !payload?.contactPage || !Array.isArray(payload?.gallery)) {
+if (!payload?.business || !payload?.home || !payload?.homePromo || !payload?.locationPage || !payload?.contactPage || !Array.isArray(payload?.gallery)) {
   console.error('[ERROR] invalid publish payload structure');
   process.exit(1);
 }
@@ -58,6 +58,12 @@ nextSiteContent.home.heroTitle = payload.home.heroTitle;
 nextSiteContent.home.heroBody = payload.home.heroBody;
 nextSiteContent.home.heroPrimaryCtaHref = phoneHref;
 nextSiteContent.home.visitSecondaryCtaHref = payload.business.place;
+nextSiteContent.home.promo = {
+  enabled: payload.homePromo.enabled !== false,
+  eyebrow: payload.homePromo.eyebrow,
+  title: payload.homePromo.title,
+  body: payload.homePromo.body,
+};
 
 nextSiteContent.locationPage.heroBody = payload.locationPage.heroBody;
 nextSiteContent.locationPage.primaryCtaHref = payload.business.place;
@@ -112,6 +118,8 @@ const summary = {
   },
   copy: {
     homeHeroTitle: nextSiteContent.home.heroTitle,
+    homePromoTitle: nextSiteContent.home.promo?.title,
+    homePromoEnabled: nextSiteContent.home.promo?.enabled !== false,
     locationHeroBody: nextSiteContent.locationPage.heroBody,
     contactHeroBody: nextSiteContent.contactPage.heroBody,
   },

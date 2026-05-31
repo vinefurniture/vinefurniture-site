@@ -20,6 +20,12 @@ export type AdminDraft = {
     heroTitle: string;
     heroBody: string;
   };
+  homePromo: {
+    enabled: boolean;
+    eyebrow: string;
+    title: string;
+    body: string;
+  };
   locationPage: {
     heroBody: string;
   };
@@ -87,6 +93,7 @@ export const normalizeDraft = (draft: Partial<AdminDraft> | null | undefined, de
 
   if (draft?.business) Object.assign(merged.business, draft.business);
   if (draft?.home) Object.assign(merged.home, draft.home);
+  if (draft?.homePromo) Object.assign(merged.homePromo, draft.homePromo);
   if (draft?.locationPage) Object.assign(merged.locationPage, draft.locationPage);
   if (draft?.contactPage) Object.assign(merged.contactPage, draft.contactPage);
   if (draft?.assetSlots) Object.assign(merged.assetSlots, draft.assetSlots);

@@ -4,9 +4,12 @@ import { join } from 'node:path';
 const root = process.cwd();
 const dist = join(root, 'dist');
 const publicDir = join(root, 'public');
+const siteContent = JSON.parse(readFileSync(join(root, 'src/data/site-content.json'), 'utf8'));
 const assetManifest = JSON.parse(readFileSync(join(root, 'src/data/vine-asset-manifest.json'), 'utf8'));
 const visibleGalleryCount = assetManifest.gallery.filter((asset) => asset.visible !== false).length;
 const homeGalleryCount = Math.min(4, visibleGalleryCount);
+const homePromoEnabled = siteContent.home?.promo?.enabled !== false;
+const homePhoneHrefCount = homePromoEnabled ? 3 : 2;
 
 const pageChecks = [
   {
@@ -17,6 +20,14 @@ const pageChecks = [
       { fragment: 'src="/admin/admin-preview.js"', label: 'preview script include' },
       { fragment: 'data-draft-field="home.heroTitle"', label: 'home hero title binding' },
       { fragment: 'data-draft-field="home.heroBody"', label: 'home hero body binding' },
+      ...(homePromoEnabled
+        ? [
+            { fragment: 'data-draft-toggle="homePromo.enabled"', label: 'home promo toggle binding' },
+            { fragment: 'data-draft-field="homePromo.eyebrow"', label: 'home promo eyebrow binding' },
+            { fragment: 'data-draft-field="homePromo.title"', label: 'home promo title binding' },
+            { fragment: 'data-draft-field="homePromo.body"', label: 'home promo body binding' },
+          ]
+        : []),
       { fragment: 'data-draft-image="heroPrimary"', label: 'home hero image binding' },
       { fragment: 'data-draft-image="storeView"', label: 'home store image binding' },
       { fragment: 'data-draft-gallery-container="home"', label: 'home gallery preview container' },
@@ -25,7 +36,7 @@ const pageChecks = [
       { fragment: 'data-draft-field="business.address"', label: 'shared address binding', expectedCount: 2 },
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding', expectedCount: 2 },
       { fragment: 'data-draft-field="business.phone"', label: 'shared phone text binding', expectedCount: 2 },
-      { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 2 },
+      { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: homePhoneHrefCount },
     ],
   },
   {
@@ -114,6 +125,10 @@ const previewScriptChecks = [
   { fragment: 'setHref(\'[data-draft-href="business.place"]\'', label: 'business.place href update' },
   { fragment: 'setText(\'[data-draft-field="home.heroTitle"]\'', label: 'home.heroTitle text update' },
   { fragment: 'setHtml(\'[data-draft-field="home.heroBody"]\'', label: 'home.heroBody html update' },
+  { fragment: 'setToggle(\'[data-draft-toggle="homePromo.enabled"]\'', label: 'homePromo.enabled toggle update' },
+  { fragment: 'setText(\'[data-draft-field="homePromo.eyebrow"]\'', label: 'homePromo.eyebrow text update' },
+  { fragment: 'setText(\'[data-draft-field="homePromo.title"]\'', label: 'homePromo.title text update' },
+  { fragment: 'setHtml(\'[data-draft-field="homePromo.body"]\'', label: 'homePromo.body html update' },
   { fragment: 'setText(\'[data-draft-field="locationPage.heroBody"]\'', label: 'locationPage.heroBody text update' },
   { fragment: 'setText(\'[data-draft-field="contactPage.heroBody"]\'', label: 'contactPage.heroBody text update' },
   { fragment: 'setImage(\'[data-draft-image="heroPrimary"]\'', label: 'heroPrimary image update' },

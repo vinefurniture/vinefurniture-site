@@ -358,6 +358,32 @@ p {
   align-items: center;
 }
 
+.home-promo-section {
+  padding-top: 0;
+}
+
+.home-promo-panel {
+  background: linear-gradient(135deg, #fffaf2 0%, #f6eee2 100%);
+}
+
+.home-promo-copy {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.home-promo-copy h2,
+.home-promo-note {
+  margin: 0;
+}
+
+.home-promo-note {
+  max-width: 58ch;
+}
+
+.home-promo-actions {
+  align-self: end;
+}
+
 .cta-panel-actions {
   justify-content: flex-end;
   margin-top: 0;
@@ -629,6 +655,22 @@ button {
   display: grid;
   gap: 0.55rem;
   font-weight: 600;
+}
+
+.admin-field-checkbox {
+  gap: 0.35rem;
+}
+
+.admin-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.admin-checkbox-row input[type='checkbox'] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
 }
 
 .admin-field span {

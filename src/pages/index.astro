@@ -4,6 +4,7 @@ import { galleryAssets, pageContent, selectedAssets, siteMeta } from '../data/si
 
 const home = pageContent.home;
 const homeGalleryAssets = galleryAssets.slice(0, 4);
+const homePromo = home.promo;
 ---
 
 <Layout
@@ -74,6 +75,24 @@ const homeGalleryAssets = galleryAssets.slice(0, 4);
       </div>
     </div>
   </section>
+
+  {homePromo?.enabled !== false && (
+    <section class="section home-promo-section" data-draft-toggle="homePromo.enabled">
+      <div class="container">
+        <article class="cta-panel home-promo-panel">
+          <div class="home-promo-copy">
+            <p class="eyebrow" data-draft-field="homePromo.eyebrow">{homePromo?.eyebrow}</p>
+            <h2 data-draft-field="homePromo.title">{homePromo?.title}</h2>
+            <p class="note home-promo-note" data-draft-field="homePromo.body">{homePromo?.body}</p>
+          </div>
+          <div class="button-group cta-panel-actions home-promo-actions">
+            <a class="button" href={home.heroPrimaryCtaHref} data-draft-href="business.phoneHref">전화로 상담 예약</a>
+            <a class="button secondary" href={home.visitPrimaryCtaHref}>오시는 길 보기</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  )}
 
   <section class="section" style="background: var(--color-surface);">
     <div class="container two-column">

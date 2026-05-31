@@ -38,6 +38,12 @@
     });
   };
 
+  const setToggle = (selector, value) => {
+    document.querySelectorAll(selector).forEach((node) => {
+      node.hidden = value === false;
+    });
+  };
+
   const showBadge = () => {
     if (document.querySelector('.draft-preview-badge')) return;
     const badge = document.createElement('div');
@@ -95,6 +101,10 @@
 
     setText('[data-draft-field="home.heroTitle"]', draft.home?.heroTitle);
     setHtml('[data-draft-field="home.heroBody"]', draft.home?.heroBody);
+    setToggle('[data-draft-toggle="homePromo.enabled"]', draft.homePromo?.enabled !== false);
+    setText('[data-draft-field="homePromo.eyebrow"]', draft.homePromo?.eyebrow);
+    setText('[data-draft-field="homePromo.title"]', draft.homePromo?.title);
+    setHtml('[data-draft-field="homePromo.body"]', draft.homePromo?.body);
     setText('[data-draft-field="locationPage.heroBody"]', draft.locationPage?.heroBody);
     setText('[data-draft-field="contactPage.heroBody"]', draft.contactPage?.heroBody);
 

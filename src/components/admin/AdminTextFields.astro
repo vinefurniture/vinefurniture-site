@@ -12,14 +12,26 @@ const wrapperClass = columns === 'grid-3' ? 'grid-3' : 'admin-field-stack';
 
 <div class={wrapperClass}>
   {fields.map((field) => (
-    <label class="admin-field">
-      <span>{field.label}</span>
-      {field.type === 'textarea' ? (
-        <textarea name={field.name} rows={field.rows ?? 4}></textarea>
+    <label class:list={["admin-field", field.type === 'checkbox' && 'admin-field-checkbox']}>
+      {field.type === 'checkbox' ? (
+        <>
+          <span class="admin-checkbox-row">
+            <input name={field.name} type="checkbox" />
+            <span>{field.label}</span>
+          </span>
+          {field.hint && <small>{field.hint}</small>}
+        </>
       ) : (
-        <input name={field.name} type={field.type === 'url' ? 'url' : 'text'} inputmode={field.inputmode} />
+        <>
+          <span>{field.label}</span>
+          {field.type === 'textarea' ? (
+            <textarea name={field.name} rows={field.rows ?? 4}></textarea>
+          ) : (
+            <input name={field.name} type={field.type === 'url' ? 'url' : 'text'} inputmode={field.inputmode} />
+          )}
+          {field.hint && <small>{field.hint}</small>}
+        </>
       )}
-      {field.hint && <small>{field.hint}</small>}
     </label>
   ))}
 </div>
