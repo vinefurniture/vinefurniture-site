@@ -88,8 +88,18 @@ node scripts/generate-vine-asset-intake.mjs --format=markdown --output=handoff/v
 uv run --with pillow python scripts/import-vine-legacy-assets.py
 ```
 
+관리자 반영 명령:
+```bash
+npm run admin:extract-assets -- ./vine-admin-draft.json --write
+npm run admin:import -- ./vine-admin-publish.json --write
+npm run build
+npm run preview:check
+```
+
 상세 기준:
 - `docs/asset-replacement-guide.md`
+- `docs/admin-publish-checklist.md`
+- `docs/admin-operator-guide.md`
 - `public/images/vine/README.md`
 - 기존 사이트 자산 재수집 스크립트: `scripts/import-vine-legacy-assets.py`
 

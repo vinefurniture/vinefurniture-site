@@ -27,6 +27,11 @@
 - `npm run build`
 - `npm run preview:check`
 
+대표 사진을 `/admin`에서 새로 올린 경우:
+- `초안 JSON 내보내기`
+- `npm run admin:extract-assets -- ./vine-admin-draft.json --write`
+- 생성된 `vine-admin-publish.json`을 `npm run admin:import -- ./vine-admin-publish.json --write`로 반영
+
 상세 기준은 `docs/asset-replacement-guide.md` 참고.
 
 기존 공개 사이트 자산 재수집:

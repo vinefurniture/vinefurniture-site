@@ -16,6 +16,7 @@ const { slots } = Astro.props;
         <strong>{slot.label}</strong>
         <p class="note">{slot.hint}</p>
         <p class="note admin-path-note">반영 대상 경로: <code>{slot.plannedSrc}</code></p>
+        <p class="note admin-upload-note">권장 파일: JPG 또는 WEBP / 가로 1600px 이상. 이 업로드는 우선 현재 브라우저 초안에서만 보입니다.</p>
         <input type="file" accept="image/*" data-admin-file={slot.key} />
         <button type="button" class="button secondary admin-clear-image" data-admin-clear={slot.key}>기본 사진으로 되돌리기</button>
       </div>

@@ -16,6 +16,7 @@
     "assets:intake:md": "node scripts/generate-vine-asset-intake.mjs --format=markdown",
     "preview:check": "node scripts/check-preview-readiness.mjs",
     "admin:import": "node scripts/import-admin-publish.mjs",
+    "admin:extract-assets": "node scripts/extract-admin-draft-assets.mjs",
     "astro": "astro"
   },
   "dependencies": {

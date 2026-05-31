@@ -170,8 +170,9 @@ public/images/
 권장 운영 순서:
 1. `/admin`에서 전화번호, 운영시간, 주소, 메인 문구, 대표 이미지 3장을 먼저 수정
 2. 입력 후 자동 저장되면 미리보기 버튼으로 모바일/문구 확인
-3. 확정된 내용만 JSON/CMS 반영 또는 실제 자산 교체 단계로 이동
-4. 갤러리 순서/다중 이미지 관리는 2차 범위로 분리
+3. 문구/링크/갤러리 순서만 바꿨으면 `사이트 반영 파일`을 내보내고 import 단계로 이동
+4. 대표 사진까지 바꿨으면 `초안 JSON`을 내보낸 뒤 `npm run admin:extract-assets -- ./vine-admin-draft.json --write`로 실제 파일을 먼저 생성
+5. 생성된 `vine-admin-publish.json` 또는 기존 publish JSON을 import 단계로 반영
 
 ---
 
