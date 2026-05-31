@@ -59,7 +59,8 @@ npm run preview
 4. Astro 프리셋/빌드 설정 확인
 5. 첫 배포 실행
 6. Preview URL에서 최종 확인
-7. 커스텀 도메인 연결 (`vinefurniture.kr`)
+7. 우선 `https://vinefurniture-site.vercel.app` 기준으로 확인
+8. 추후 필요 시 커스텀 도메인 연결 (`vinefurniture.kr` 또는 신규 도메인)
 
 ## 자산 반영 메모
 현재는 기존 `vinefurniture.kr` 공개 자산을 기준으로 **대표 이미지 12개가 실제 파일로 연결된 상태**입니다.
@@ -93,5 +94,6 @@ uv run --with pillow python scripts/import-vine-legacy-assets.py
 - 기존 사이트 자산 재수집 스크립트: `scripts/import-vine-legacy-assets.py`
 
 ## 참고
-- 사이트 기본 URL은 `astro.config.mjs`에서 `https://vinefurniture.kr`로 설정되어 있습니다.
+- 현재 임시 운영 기본 URL은 `https://vinefurniture-site.vercel.app` 입니다.
+- 추후 커스텀 도메인을 연결하면 `astro.config.mjs`와 `src/data/site-content.json`의 `siteUrl`을 함께 교체해야 합니다.
 - 사이트맵은 `@astrojs/sitemap`으로 생성됩니다.

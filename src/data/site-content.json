@@ -3,7 +3,7 @@
     "name": "바인퍼니처",
     "defaultTitle": "바인퍼니처 | 30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점",
     "defaultDescription": "30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점 바인퍼니처. 침대, 소파, 식탁 등 프리미엄 가구를 합리적인 가격으로 제안합니다.",
-    "siteUrl": "https://vinefurniture.kr",
+    "siteUrl": "https://vinefurniture-site.vercel.app",
     "locale": "ko_KR",
     "themeColor": "#f7f1ea",
     "ogImage": "/images/og/vine-og-default.svg",
