@@ -750,6 +750,17 @@ button {
   gap: 0.75rem;
 }
 
+.admin-guide-head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.admin-guide-open-button {
+  white-space: nowrap;
+}
+
 .admin-guide-title,
 .admin-guide-reminder-title {
   margin-bottom: 0.5rem;
@@ -821,7 +832,8 @@ button {
 
   .site-header,
   .site-footer,
-  .admin-guide-print-button {
+  .admin-guide-print-button,
+  .admin-guide-open-button {
     display: none !important;
   }
 
