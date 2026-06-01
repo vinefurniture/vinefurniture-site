@@ -84,7 +84,7 @@
       "alt": "바인퍼니처 매장 분위기 이미지",
       "source": "기존 vinefurniture.kr 공개 이미지 수집본",
       "visible": true,
-      "order": 3
+      "order": 5
     },
     {
       "key": "galleryStorage01",
@@ -96,7 +96,7 @@
       "alt": "바인퍼니처 쇼룸 전시 이미지",
       "source": "기존 vinefurniture.kr 공개 이미지 수집본",
       "visible": true,
-      "order": 5
+      "order": 4
     },
     {
       "key": "galleryInstagramBed01",
@@ -120,7 +120,7 @@
       "alt": "바인퍼니처 거실 스타일링 이미지",
       "source": "기존 vinefurniture.kr 공개 이미지 수집본",
       "visible": true,
-      "order": 4
+      "order": 3
     },
     {
       "key": "galleryStoreInterior01",
