@@ -515,13 +515,13 @@ p {
 }
 
 .instagram-feed-frame-wrap.instagram-feed-frame-wrap--home {
-  min-height: 110rem;
+  min-height: 62rem;
   max-width: 62rem;
   margin: 0 auto;
 }
 
 .instagram-feed-frame.instagram-feed-frame--home {
-  min-height: 110rem;
+  min-height: 62rem;
 }
 
 .gallery-secondary-block {
@@ -1338,6 +1338,11 @@ button {
     min-height: 38rem;
   }
 
+  .instagram-feed-frame-wrap.instagram-feed-frame-wrap--home,
+  .instagram-feed-frame.instagram-feed-frame--home {
+    min-height: 46rem;
+  }
+
   .grid-3 {
     grid-template-columns: 1fr;
   }
@@ -1477,6 +1482,11 @@ button {
   .instagram-feed-frame-wrap,
   .instagram-feed-frame {
     min-height: 32rem;
+  }
+
+  .instagram-feed-frame-wrap.instagram-feed-frame-wrap--home,
+  .instagram-feed-frame.instagram-feed-frame--home {
+    min-height: 36rem;
   }
 
   .hero-media-large img,
