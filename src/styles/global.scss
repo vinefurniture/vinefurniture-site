@@ -335,8 +335,37 @@ p {
   margin: 0 auto;
 }
 
-.instagram-feed-frame--home {
-  min-height: inherit;
+.recent-feed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.recent-feed-tile {
+  display: block;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  aspect-ratio: 1 / 1;
+}
+
+.recent-feed-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 180ms ease;
+}
+
+.recent-feed-tile:hover img {
+  transform: scale(1.02);
+}
+
+.recent-feed-tile:focus-visible {
+  outline: 2px solid rgba(161, 128, 82, 0.35);
+  outline-offset: 2px;
 }
 
 .visit-highlight-panel {
@@ -1309,6 +1338,10 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .recent-feed-grid {
+    gap: 0.45rem;
+  }
+
   .header-inner {
     min-height: auto;
     flex-wrap: wrap;
@@ -1462,6 +1495,10 @@ button {
   .hero-media-small img,
   .home-gallery-item .card-image-wrap img {
     aspect-ratio: 4 / 3;
+  }
+
+  .recent-feed-tile {
+    border-radius: 0.9rem;
   }
 
   .button-group {

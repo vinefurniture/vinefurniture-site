@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { pageContent, selectedAssets, siteMeta } from '../data/site';
+import { assetInventory, pageContent, selectedAssets, siteMeta } from '../data/site';
 
 const home = pageContent.home;
 const homePromo = home.promo;
 const instagramProfileUrl = siteMeta.instagram.replace(/\/$/, '');
-const instagramEmbedUrl = `${instagramProfileUrl}/embed/`;
+const recentFeedAssets = [...assetInventory.gallery, selectedAssets.heroSecondary].slice(0, 9);
 const visitLeadEyebrow = homePromo?.eyebrow ?? '방문 안내';
 const visitLeadTitle = homePromo?.enabled !== false && homePromo?.title ? homePromo.title : home.visitTitle;
 const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homePromo.body : home.visitBody;
@@ -74,16 +74,18 @@ const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homeProm
         </div>
       </div>
 
-      <div class="instagram-feed-embed-shell">
-        <div class="instagram-feed-frame-wrap instagram-feed-frame-wrap--home">
-          <iframe
-            class="instagram-feed-frame instagram-feed-frame--home"
-            src={instagramEmbedUrl}
-            title="바인퍼니처 인스타그램 최근 피드"
-            loading="lazy"
-            allowtransparency="true"
-          />
-        </div>
+      <div class="recent-feed-grid" aria-label="바인퍼니처 최근 사진 9장">
+        {recentFeedAssets.map((asset) => (
+          <a
+            class="recent-feed-tile"
+            href={instagramProfileUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${asset.title} 사진을 보고 인스타그램으로 이동`}
+          >
+            <img src={asset.src} alt={asset.alt} />
+          </a>
+        ))}
       </div>
     </div>
   </section>
