@@ -326,28 +326,17 @@ p {
   justify-content: flex-end;
 }
 
-.recent-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+.instagram-feed-embed-shell {
   margin-top: 1.5rem;
 }
 
-.recent-photo-card {
-  height: 100%;
+.instagram-feed-frame-wrap--home {
+  max-width: 62rem;
+  margin: 0 auto;
 }
 
-.recent-photo-meta {
-  gap: 0.35rem;
-}
-
-.recent-photo-meta strong {
-  line-height: 1.35;
-  word-break: keep-all;
-}
-
-.recent-photo-badge {
-  width: auto;
+.instagram-feed-frame--home {
+  min-height: inherit;
 }
 
 .visit-highlight-panel {
@@ -490,6 +479,16 @@ p {
 
 .instagram-feed-frame--compact {
   min-height: 34rem;
+}
+
+.instagram-feed-frame-wrap.instagram-feed-frame-wrap--home {
+  min-height: 110rem;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.instagram-feed-frame.instagram-feed-frame--home {
+  min-height: 110rem;
 }
 
 .gallery-secondary-block {

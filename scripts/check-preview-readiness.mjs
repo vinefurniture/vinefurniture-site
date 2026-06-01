@@ -5,9 +5,6 @@ const root = process.cwd();
 const dist = join(root, 'dist');
 const publicDir = join(root, 'public');
 const siteContent = JSON.parse(readFileSync(join(root, 'src/data/site-content.json'), 'utf8'));
-const assetManifest = JSON.parse(readFileSync(join(root, 'src/data/vine-asset-manifest.json'), 'utf8'));
-const visibleGalleryCount = assetManifest.gallery.filter((asset) => asset.visible !== false).length;
-const homeGalleryCount = Math.min(6, visibleGalleryCount);
 const homePromoEnabled = siteContent.home?.promo?.enabled !== false;
 const homePhoneHrefCount = 2;
 
@@ -30,8 +27,7 @@ const pageChecks = [
         : []),
       { fragment: 'data-draft-image="heroPrimary"', label: 'home hero image binding' },
       { fragment: 'data-draft-image="storeView"', label: 'home store image binding' },
-      { fragment: 'data-draft-gallery-container="home"', label: 'home gallery preview container' },
-      { fragment: 'data-draft-gallery-item=', label: 'home gallery preview item', expectedCount: homeGalleryCount },
+      { fragment: 'title="바인퍼니처 인스타그램 최근 피드"', label: 'home instagram embed frame' },
       { fragment: 'data-draft-href="business.place"', label: 'home place href binding' },
       { fragment: 'data-draft-field="business.address"', label: 'shared address binding', expectedCount: 2 },
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding', expectedCount: 2 },

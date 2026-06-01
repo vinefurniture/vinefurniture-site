@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { galleryAssets, pageContent, selectedAssets, siteMeta } from '../data/site';
+import { pageContent, selectedAssets, siteMeta } from '../data/site';
 
 const home = pageContent.home;
-const recentPhotoAssets = galleryAssets.slice(0, 6);
 const homePromo = home.promo;
+const instagramProfileUrl = siteMeta.instagram.replace(/\/$/, '');
+const instagramEmbedUrl = `${instagramProfileUrl}/embed/`;
 const visitLeadEyebrow = homePromo?.eyebrow ?? '방문 안내';
 const visitLeadTitle = homePromo?.enabled !== false && homePromo?.title ? homePromo.title : home.visitTitle;
 const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homePromo.body : home.visitBody;
@@ -73,18 +74,16 @@ const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homeProm
         </div>
       </div>
 
-      <div class="recent-photo-grid" data-draft-gallery-container="home" data-draft-gallery-limit="6">
-        {recentPhotoAssets.map((asset) => (
-          <article class="gallery-card recent-photo-card" data-draft-gallery-item={asset.key}>
-            <div class="card-image-wrap">
-              <img src={asset.src} alt={asset.alt} />
-              <div class="overlay-note recent-photo-badge">{asset.category}</div>
-            </div>
-            <div class="gallery-copy recent-photo-meta">
-              <strong>{asset.title}</strong>
-            </div>
-          </article>
-        ))}
+      <div class="instagram-feed-embed-shell">
+        <div class="instagram-feed-frame-wrap instagram-feed-frame-wrap--home">
+          <iframe
+            class="instagram-feed-frame instagram-feed-frame--home"
+            src={instagramEmbedUrl}
+            title="바인퍼니처 인스타그램 최근 피드"
+            loading="lazy"
+            allowtransparency="true"
+          />
+        </div>
       </div>
     </div>
   </section>
