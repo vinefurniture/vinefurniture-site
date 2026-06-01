@@ -94,19 +94,18 @@ This keeps the header intuitive and reduces page-hopping.
 
 ## Instagram strategy
 ## Recommended approach
-Do **not** make the whole site depend on a real-time Instagram feed.
+Do **not** make the whole home page depend on a real-time Instagram feed.
 
-Preferred order:
-1. **Best default:** curated in-site gallery + Instagram profile CTA
-2. **Good compromise:** lightweight Instagram teaser/cards linking outward
-3. **Avoid as primary:** heavy full-feed embed that controls layout and performance
+Current preferred order for this project:
+1. **Home page:** compact teaser gallery + single CTA into `/gallery`
+2. **Gallery page:** Instagram-first embedded feed + supporting curated showroom photos
+3. **Direct Instagram open:** secondary action only when the user wants the native Instagram surface
 
 ### Why
-- simpler maintenance
-- more stable layout
-- faster page load
-- less policy/API/embed fragility
-- better fit for a low-tech future operator
+- keeps the home conversion flow simpler
+- preserves the user's place inside the site before inquiry/visit
+- still gives a live/latest-photo surface on `/gallery`
+- better fit for a low-tech future operator than making every section depend on embeds
 
 ## Conversion hierarchy
 Every main screen should keep the conversion actions obvious:
@@ -134,7 +133,9 @@ If there are too many equal-weight buttons, conversion weakens.
 
 ### Page role after refactor
 - `/` = primary public experience
-- `/brand`, `/gallery`, `/location`, `/contact` = optional fallback/support pages or candidates for later removal/redirect
+- `/gallery` = Instagram-first latest-photo page with supporting curated showroom highlights
+- `/brand`, `/location`, `/contact` = optional fallback/support pages or candidates for later removal/redirect
+- `/promotion` = do not reintroduce as a separate public route unless a future campaign truly needs a standalone landing page; keep promotions in the home `homePromo` block by default
 
 ## Success criteria
 The redesign is successful if a first-time visitor can:

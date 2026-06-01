@@ -1067,6 +1067,16 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .instagram-feed-panel {
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .instagram-feed-frame-wrap,
+  .instagram-feed-frame {
+    min-height: 38rem;
+  }
+
   .grid-3 {
     grid-template-columns: 1fr;
   }
@@ -1202,9 +1212,22 @@ button {
     border-radius: 1.15rem;
   }
 
+  .instagram-feed-panel {
+    gap: 0.9rem;
+    padding: 1rem;
+  }
+
+  .instagram-feed-copy {
+    gap: 0.65rem;
+  }
+
+  .instagram-feed-actions {
+    margin-top: 0.15rem;
+  }
+
   .instagram-feed-frame-wrap,
   .instagram-feed-frame {
-    min-height: 42rem;
+    min-height: 32rem;
   }
 
   .hero-media-large img,
