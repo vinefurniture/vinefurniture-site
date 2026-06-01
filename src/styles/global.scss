@@ -305,14 +305,14 @@ p {
 
 .recent-feed-section-head {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem 1.5rem;
+  gap: 0.75rem 1.25rem;
 }
 
 .recent-feed-intro {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.35rem;
   max-width: 58rem;
 }
 
@@ -327,7 +327,7 @@ p {
 }
 
 .instagram-feed-embed-shell {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .instagram-feed-frame-wrap--home {
@@ -1331,6 +1331,10 @@ button {
   .instagram-feed-panel {
     gap: 1rem;
     padding: 1.25rem;
+  }
+
+  .recent-feed-section-head {
+    align-items: flex-start;
   }
 
   .instagram-feed-frame-wrap,
