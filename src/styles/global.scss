@@ -455,9 +455,18 @@ p {
   margin: 0;
 }
 
+.home-promo-copy h2 {
+  max-width: 12ch;
+  text-wrap: balance;
+  word-break: keep-all;
+  line-height: 1.15;
+}
+
 .home-promo-note {
   max-width: 58ch;
+  word-break: keep-all;
 }
+
 
 .home-promo-benefit {
   margin: 0;
