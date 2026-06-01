@@ -354,6 +354,11 @@ p {
   padding: 1.5rem;
 }
 
+.instagram-feed-panel--compact {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+}
+
 .instagram-feed-copy {
   display: grid;
   align-content: start;
@@ -378,12 +383,20 @@ p {
   min-height: 52rem;
 }
 
+.instagram-feed-frame-wrap--compact {
+  min-height: 34rem;
+}
+
 .instagram-feed-frame {
   display: block;
   width: 100%;
   min-height: 52rem;
   border: 0;
   background: transparent;
+}
+
+.instagram-feed-frame--compact {
+  min-height: 34rem;
 }
 
 .gallery-secondary-block {
@@ -444,6 +457,21 @@ p {
 
 .home-promo-note {
   max-width: 58ch;
+}
+
+.home-promo-benefit {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(220, 194, 171, 0.9);
+  font-weight: 700;
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
+.home-promo-disclaimer {
+  max-width: 62ch;
 }
 
 .home-promo-actions {

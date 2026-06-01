@@ -5,6 +5,8 @@ import { galleryAssets, pageContent, selectedAssets, siteMeta } from '../data/si
 const home = pageContent.home;
 const homeGalleryAssets = galleryAssets.slice(0, 4);
 const homePromo = home.promo;
+const instagramProfileUrl = siteMeta.instagram.replace(/\/$/, '');
+const instagramEmbedUrl = `${instagramProfileUrl}/embed/`;
 ---
 
 <Layout
@@ -73,9 +75,27 @@ const homePromo = home.promo;
           </article>
         ))}
       </div>
-      <div class="button-group home-gallery-actions">
-        <a class="button" href="/gallery">최근 사진 보기</a>
-      </div>
+
+      <section class="instagram-feed-panel instagram-feed-panel--compact" aria-labelledby="recent-feed-title" id="recent-feed">
+        <div class="instagram-feed-copy">
+          <p class="eyebrow">{home.recentFeedEyebrow}</p>
+          <h2 id="recent-feed-title">{home.recentFeedTitle}</h2>
+          <p class="note">{home.recentFeedBody}</p>
+          <div class="button-group instagram-feed-actions">
+            <a class="button secondary" href={home.recentFeedPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.instagram">{home.recentFeedPrimaryCtaLabel}</a>
+          </div>
+        </div>
+
+        <div class="instagram-feed-frame-wrap instagram-feed-frame-wrap--compact">
+          <iframe
+            class="instagram-feed-frame instagram-feed-frame--compact"
+            src={instagramEmbedUrl}
+            title="바인퍼니처 인스타그램 최근 피드"
+            loading="lazy"
+            allowtransparency="true"
+          />
+        </div>
+      </section>
     </div>
   </section>
 
@@ -87,10 +107,12 @@ const homePromo = home.promo;
             <p class="eyebrow" data-draft-field="homePromo.eyebrow">{homePromo?.eyebrow}</p>
             <h2 data-draft-field="homePromo.title">{homePromo?.title}</h2>
             <p class="note home-promo-note" data-draft-field="homePromo.body">{homePromo?.body}</p>
+            {homePromo?.benefit && <p class="home-promo-benefit">{homePromo.benefit}</p>}
+            {homePromo?.disclaimer && <p class="note home-promo-disclaimer">{homePromo.disclaimer}</p>}
           </div>
           <div class="button-group cta-panel-actions home-promo-actions">
             <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">네이버 플레이스로 방문 예약</a>
-            <a class="button secondary" href="/gallery">최근 사진 보기</a>
+            <a class="button secondary" href={home.recentFeedPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.instagram">인스타그램 직접 열기</a>
             <a class="button secondary" href={home.heroPrimaryCtaHref} data-draft-href="business.phoneHref">전화 문의하기</a>
           </div>
         </article>

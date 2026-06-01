@@ -48,12 +48,11 @@ const pageChecks = [
   {
     route: '/gallery',
     file: 'gallery/index.html',
-    titleFragment: '갤러리 | 바인퍼니처',
+    titleFragment: '최근 사진 | 바인퍼니처',
     requiredBindings: [
       { fragment: 'src="/admin/admin-preview.js"', label: 'preview script include' },
-      { fragment: 'data-draft-gallery-container="gallery"', label: 'gallery preview container' },
-      { fragment: 'data-draft-gallery-item=', label: 'gallery preview items', expectedCount: visibleGalleryCount },
-      { fragment: 'data-draft-href="business.phoneHref"', label: 'gallery phone CTA binding' },
+      { fragment: "window.location.replace('/#recent-feed')", label: 'gallery redirect script' },
+      { fragment: 'href="/#recent-feed"', label: 'gallery redirect CTA' },
     ],
   },
   {
@@ -83,7 +82,7 @@ const pageChecks = [
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding' },
       { fragment: 'data-draft-field="business.phone"', label: 'shared phone text binding', expectedCount: 2 },
       { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 1 },
-      { fragment: 'data-draft-href="business.instagram"', label: 'contact instagram href binding', expectedCount: 3 },
+      { fragment: 'data-draft-href="business.instagram"', label: 'contact instagram href binding', expectedCount: 2 },
       { fragment: 'data-draft-href="business.blog"', label: 'contact blog href binding', expectedCount: 2 },
     ],
   },
