@@ -628,6 +628,13 @@ button {
   margin-top: 0;
 }
 
+.admin-action-buttons .button,
+.admin-action-buttons .button.secondary {
+  min-height: 3.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .admin-action-buttons-primary {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -645,6 +652,11 @@ button {
   border-radius: 1rem;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
+}
+
+.admin-next-step-card:first-child,
+.admin-inline-guide-card:first-child {
+  border-color: #d9ccb9;
 }
 
 .admin-next-step-card strong {
@@ -1246,6 +1258,11 @@ button {
   .button.secondary,
   .header-cta {
     width: 100%;
+  }
+
+  .admin-action-buttons .button,
+  .admin-action-buttons .button.secondary {
+    min-height: 3.15rem;
   }
 
   .site-nav {

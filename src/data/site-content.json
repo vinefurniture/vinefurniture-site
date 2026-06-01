@@ -31,11 +31,11 @@
     },
     {
       "href": "/gallery",
-      "label": "갤러리"
+      "label": "최근 사진"
     },
     {
       "href": "/#visit",
-      "label": "방문예약"
+      "label": "방문 예약"
     }
   ],
   "home": {

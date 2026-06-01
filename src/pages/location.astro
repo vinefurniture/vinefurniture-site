@@ -15,9 +15,11 @@ const locationPage = pageContent.location;
         <p class="eyebrow">{locationPage.eyebrow}</p>
         <h1>{locationPage.heroTitle}</h1>
         <p data-draft-field="locationPage.heroBody">{locationPage.heroBody}</p>
+        <p class="note">최근 사진은 갤러리에서 먼저 확인하시고, 방문 전에는 이 페이지에서 위치와 운영시간만 빠르게 확인하시면 됩니다.</p>
         <div class="button-group">
           <a class="button" href={locationPage.primaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{locationPage.primaryCtaLabel}</a>
           <a class="button secondary" href={locationPage.secondaryCtaHref} data-draft-href="business.phoneHref">{locationPage.secondaryCtaLabel}</a>
+          <a class="button secondary" href="/gallery">최근 사진 보기</a>
         </div>
       </div>
       <div class="card-image-wrap hero-media-small">

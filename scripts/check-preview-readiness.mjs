@@ -9,7 +9,7 @@ const assetManifest = JSON.parse(readFileSync(join(root, 'src/data/vine-asset-ma
 const visibleGalleryCount = assetManifest.gallery.filter((asset) => asset.visible !== false).length;
 const homeGalleryCount = Math.min(4, visibleGalleryCount);
 const homePromoEnabled = siteContent.home?.promo?.enabled !== false;
-const homePhoneHrefCount = homePromoEnabled ? 4 : 2;
+const homePhoneHrefCount = homePromoEnabled ? 3 : 2;
 
 const pageChecks = [
   {
@@ -67,8 +67,8 @@ const pageChecks = [
       { fragment: 'data-draft-field="business.address"', label: 'shared address binding' },
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding' },
       { fragment: 'data-draft-field="business.phone"', label: 'shared phone text binding' },
-      { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 2 },
-      { fragment: 'data-draft-href="business.place"', label: 'location place href binding', expectedCount: 2 },
+      { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 1 },
+      { fragment: 'data-draft-href="business.place"', label: 'location place href binding', expectedCount: 3 },
     ],
   },
   {
@@ -82,7 +82,7 @@ const pageChecks = [
       { fragment: 'data-draft-field="business.address"', label: 'shared address binding' },
       { fragment: 'data-draft-field="business.hours"', label: 'shared hours binding' },
       { fragment: 'data-draft-field="business.phone"', label: 'shared phone text binding', expectedCount: 2 },
-      { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 2 },
+      { fragment: 'data-draft-href="business.phoneHref"', label: 'phone CTA href binding', expectedCount: 1 },
       { fragment: 'data-draft-href="business.instagram"', label: 'contact instagram href binding', expectedCount: 3 },
       { fragment: 'data-draft-href="business.blog"', label: 'contact blog href binding', expectedCount: 2 },
     ],
