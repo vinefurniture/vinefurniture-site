@@ -1,11 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { assetInventory, pageContent, selectedAssets, siteMeta } from '../data/site';
+import { pageContent, selectedAssets, siteMeta } from '../data/site';
 
 const home = pageContent.home;
 const locationPage = pageContent.location;
 const contactPage = pageContent.contact;
-const galleryPreview = assetInventory.gallery.slice(0, 6);
 ---
 
 <Layout title="관리자 화면 데모 | 바인퍼니처" description="바인퍼니처 간편 관리자 MVP가 어떤 범위를 다루는지 설명하는 데모 페이지입니다.">
@@ -52,27 +51,21 @@ const galleryPreview = assetInventory.gallery.slice(0, 6);
       </div>
 
       <div class="card">
-        <h2>대표 사진 3장</h2>
+        <h2>현재 사용 중인 대표 사진 3장</h2>
         <div class="grid-3">
           <article class="card"><img src={selectedAssets.heroPrimary.src} alt={selectedAssets.heroPrimary.alt} /><p style="margin-top:0.75rem;"><strong>메인 대표 사진</strong><br />기본 경로: {selectedAssets.heroPrimary.plannedSrc}</p></article>
-          <article class="card"><img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} /><p style="margin-top:0.75rem;"><strong>매장 전경 사진</strong><br />기본 경로: {selectedAssets.storeView.plannedSrc}</p></article>
+          <article class="card"><img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} /><p style="margin-top:0.75rem;"><strong>방문 안내 / 매장 전경 사진</strong><br />기본 경로: {selectedAssets.storeView.plannedSrc}</p></article>
           <article class="card"><img src={selectedAssets.heroSecondary.src} alt={selectedAssets.heroSecondary.alt} /><p style="margin-top:0.75rem;"><strong>문의 보조 사진</strong><br />기본 경로: {selectedAssets.heroSecondary.plannedSrc}</p></article>
         </div>
       </div>
 
       <div class="card">
-        <h2>갤러리 순서 / 노출 관리 예시</h2>
-        <p class="note">실제 <code>/admin</code> 에서는 위/아래 버튼과 숨기기 버튼으로 관리합니다.</p>
+        <h2>최근 사진 영역 운영 방식</h2>
+        <p class="note">현재 홈의 최근 사진 영역은 사이트 관리자에서 따로 순서/노출을 바꾸지 않고, 인스타그램 피드 업데이트를 그대로 따라갑니다.</p>
         <div class="grid-3" style="margin-top:1rem;">
-          {galleryPreview.map((asset) => (
-            <article class={`gallery-card${asset.visible ? '' : ' is-hidden'}`}>
-              <div class="card-image-wrap"><img src={asset.src} alt={asset.alt} /></div>
-              <div class="gallery-copy">
-                <strong>{asset.order}. {asset.title}</strong>
-                <span>{asset.visible ? '노출중' : '숨김'}</span>
-              </div>
-            </article>
-          ))}
+          <article class="card"><h3>사이트 관리자에서 하는 일</h3><p>전화, 운영시간, 주소, 문구, 현재 쓰는 대표 사진만 수정</p></article>
+          <article class="card"><h3>최근 사진은 어디서 바꾸나</h3><p>인스타그램 계정에서 게시물 업로드/정리로 관리</p></article>
+          <article class="card"><h3>홈에서 보이는 방식</h3><p>홈 최근 사진 섹션에서 인스타그램 최신 흐름을 바로 확인</p></article>
         </div>
       </div>
 
