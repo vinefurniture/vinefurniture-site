@@ -30,10 +30,6 @@
       "label": "소개"
     },
     {
-      "href": "/#recent-feed",
-      "label": "최근 사진"
-    },
-    {
       "href": "/#visit",
       "label": "방문 예약"
     }
