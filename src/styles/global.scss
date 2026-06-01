@@ -322,7 +322,7 @@ p {
 }
 
 .recent-feed-intro h2 {
-  max-width: 15ch;
+  max-width: 18ch;
   text-wrap: balance;
   word-break: keep-all;
   line-height: 1.14;
@@ -401,7 +401,8 @@ p {
 }
 
 .visit-highlight-copy h2 {
-  max-width: 16ch;
+  max-width: 18ch;
+  font-size: clamp(2rem, 3vw, 2.2rem);
   text-wrap: balance;
   word-break: keep-all;
   line-height: 1.12;
