@@ -1,7 +1,6 @@
 ---
-import { navigationItems, selectedAssets, siteMeta } from '../data/site';
+import { selectedAssets, siteMeta } from '../data/site';
 
-const { pathname } = Astro.url;
 const logoAsset = selectedAssets.logoPrimary;
 ---
 
@@ -19,28 +18,6 @@ const logoAsset = selectedAssets.logoPrimary;
       }
       <span class="brand-text">{siteMeta.name}</span>
     </a>
-
-    <nav class="site-nav" aria-label="주요 메뉴">
-      <ul>
-        {navigationItems.map((item) => {
-          const isActive = item.href === '/gallery'
-            ? pathname === '/gallery'
-            : item.href === '/brand'
-              ? pathname === '/brand'
-              : item.href === '/location'
-                ? pathname === '/location'
-                : item.href === '/contact'
-                  ? pathname === '/contact'
-                  : false;
-
-          return (
-            <li>
-              <a href={item.href} class={isActive ? 'active' : ''}>{item.label}</a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
 
     <a class="header-cta" href={siteMeta.place} target="_blank" rel="noreferrer" data-draft-href="business.place">방문 예약</a>
   </div>

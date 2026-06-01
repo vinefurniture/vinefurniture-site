@@ -5,7 +5,19 @@ import { assetInventory, pageContent, selectedAssets, siteMeta } from '../data/s
 const home = pageContent.home;
 const homePromo = home.promo;
 const instagramProfileUrl = siteMeta.instagram.replace(/\/$/, '');
-const recentFeedAssets = [...assetInventory.gallery, selectedAssets.heroSecondary].slice(0, 9);
+const recentFeedAssetKeys = [
+  'galleryBed01',
+  'galleryTable01',
+  'galleryInstagramSofa01',
+  'galleryStorage01',
+  'gallerySofa01',
+];
+const recentFeedAssets = [
+  ...recentFeedAssetKeys
+    .map((key) => assetInventory.gallery.find((asset) => asset.key === key))
+    .filter(Boolean),
+  selectedAssets.storeView,
+];
 const visitLeadEyebrow = homePromo?.eyebrow ?? '방문 안내';
 const visitLeadTitle = homePromo?.enabled !== false && homePromo?.title ? homePromo.title : home.visitTitle;
 const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homePromo.body : home.visitBody;
@@ -74,7 +86,7 @@ const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homeProm
         </div>
       </div>
 
-      <div class="recent-feed-grid" aria-label="바인퍼니처 최근 사진 9장">
+      <div class="recent-feed-grid recent-feed-grid--six" aria-label="바인퍼니처 최근 사진 6장">
         {recentFeedAssets.map((asset) => (
           <a
             class="recent-feed-tile"

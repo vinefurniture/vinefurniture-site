@@ -342,6 +342,10 @@ p {
   margin-top: 1.5rem;
 }
 
+.recent-feed-grid--six {
+  max-width: 60rem;
+}
+
 .recent-feed-tile {
   display: block;
   border-radius: 1rem;
@@ -1344,44 +1348,19 @@ button {
 
   .header-inner {
     min-height: auto;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0.85rem 0;
   }
 
   .brand {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .site-nav {
-    order: 3;
-    width: 100%;
-    overflow-x: auto;
-    padding: 0 0.125rem 0.25rem;
-    scrollbar-width: none;
-  }
-
-  .site-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .site-nav ul {
-    width: max-content;
-    min-width: 100%;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 1rem;
-  }
-
-  .site-nav a {
-    display: inline-flex;
-    white-space: nowrap;
+    width: auto;
+    justify-content: flex-start;
   }
 
   .header-cta {
-    width: 100%;
-    max-width: 18rem;
+    width: auto;
+    max-width: none;
+    flex-shrink: 0;
   }
 
   .hero,
@@ -1425,6 +1404,15 @@ button {
 
   .brand {
     gap: 0.65rem;
+  }
+
+  .brand-text {
+    font-size: 0.98rem;
+  }
+
+  .header-cta {
+    padding: 0.72rem 1rem;
+    font-size: 0.95rem;
   }
 
   .brand-mark,
