@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import { galleryAssets, pageContent, selectedAssets, siteMeta } from '../data/site';
 
 const home = pageContent.home;
-const homeGalleryAssets = galleryAssets.slice(0, 4);
+const recentPhotoAssets = galleryAssets.slice(0, 6);
 const homePromo = home.promo;
-const instagramProfileUrl = siteMeta.instagram.replace(/\/$/, '');
-const instagramEmbedUrl = `${instagramProfileUrl}/embed/`;
+const visitLeadEyebrow = homePromo?.eyebrow ?? '방문 안내';
+const visitLeadTitle = homePromo?.enabled !== false && homePromo?.title ? homePromo.title : home.visitTitle;
+const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homePromo.body : home.visitBody;
 ---
 
 <Layout
@@ -58,81 +59,56 @@ const instagramEmbedUrl = `${instagramProfileUrl}/embed/`;
     </div>
   </section>
 
-  <section class="section" id="home-gallery">
+  <section class="section" id="recent-feed">
     <div class="container">
-      <h2>{home.galleryTitle}</h2>
-      <p class="note">{home.galleryNote}</p>
-      <div class="grid-4 gallery-grid" style="margin-top:1.5rem;" data-draft-gallery-container="home" data-draft-gallery-limit="4">
-        {homeGalleryAssets.map((asset) => (
-          <article class="gallery-card home-gallery-item" data-draft-gallery-item={asset.key}>
+      <div class="recent-feed-section-head">
+        <div class="recent-feed-intro">
+          <p class="eyebrow">{home.recentFeedEyebrow}</p>
+          <h2>{home.galleryTitle}</h2>
+          <p class="note">{home.galleryNote}</p>
+        </div>
+        <div class="button-group recent-feed-actions">
+          <a class="button secondary" href={home.recentFeedPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.instagram">{home.recentFeedPrimaryCtaLabel}</a>
+          <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{home.visitPrimaryCtaLabel}</a>
+        </div>
+      </div>
+
+      <div class="recent-photo-grid" data-draft-gallery-container="home" data-draft-gallery-limit="6">
+        {recentPhotoAssets.map((asset) => (
+          <article class="gallery-card recent-photo-card" data-draft-gallery-item={asset.key}>
             <div class="card-image-wrap">
               <img src={asset.src} alt={asset.alt} />
+              <div class="overlay-note recent-photo-badge">{asset.category}</div>
             </div>
-            <div class="gallery-copy">
+            <div class="gallery-copy recent-photo-meta">
               <strong>{asset.title}</strong>
-              <span>{asset.category}</span>
             </div>
           </article>
         ))}
       </div>
-
-      <section class="instagram-feed-panel instagram-feed-panel--compact" aria-labelledby="recent-feed-title" id="recent-feed">
-        <div class="instagram-feed-copy">
-          <p class="eyebrow">{home.recentFeedEyebrow}</p>
-          <h2 id="recent-feed-title">{home.recentFeedTitle}</h2>
-          <p class="note">{home.recentFeedBody}</p>
-          <div class="button-group instagram-feed-actions">
-            <a class="button secondary" href={home.recentFeedPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.instagram">{home.recentFeedPrimaryCtaLabel}</a>
-          </div>
-        </div>
-
-        <div class="instagram-feed-frame-wrap instagram-feed-frame-wrap--compact">
-          <iframe
-            class="instagram-feed-frame instagram-feed-frame--compact"
-            src={instagramEmbedUrl}
-            title="바인퍼니처 인스타그램 최근 피드"
-            loading="lazy"
-            allowtransparency="true"
-          />
-        </div>
-      </section>
     </div>
   </section>
 
-  {homePromo?.enabled !== false && (
-    <section class="section home-promo-section" data-draft-toggle="homePromo.enabled" id="visit-promo">
-      <div class="container">
-        <article class="cta-panel home-promo-panel">
-          <div class="home-promo-copy">
-            <p class="eyebrow" data-draft-field="homePromo.eyebrow">{homePromo?.eyebrow}</p>
-            <h2 data-draft-field="homePromo.title">{homePromo?.title}</h2>
-            <p class="note home-promo-note" data-draft-field="homePromo.body">{homePromo?.body}</p>
-            {homePromo?.benefit && <p class="home-promo-benefit">{homePromo.benefit}</p>}
-            {homePromo?.disclaimer && <p class="note home-promo-disclaimer">{homePromo.disclaimer}</p>}
-          </div>
-          <div class="button-group cta-panel-actions home-promo-actions">
-            <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">네이버 플레이스로 방문 예약</a>
-            <a class="button secondary" href={home.heroPrimaryCtaHref} data-draft-href="business.phoneHref">전화 문의하기</a>
-          </div>
-        </article>
-      </div>
-    </section>
-  )}
-
   <section class="section" style="background: var(--color-surface);" id="visit">
-    <div class="container two-column">
-      <div>
-        <h2>{home.visitTitle}</h2>
-        <p>{home.visitBody}</p>
-        <div class="button-group">
-          <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{home.visitPrimaryCtaLabel}</a>
-          <a class="button secondary" href={home.visitSecondaryCtaHref} data-draft-href="business.phoneHref">{home.visitSecondaryCtaLabel}</a>
+    <div class="container">
+      <article class="visit-highlight-panel" data-draft-toggle="homePromo.enabled">
+        <div class="visit-highlight-copy">
+          <p class="eyebrow" data-draft-field="homePromo.eyebrow">{visitLeadEyebrow}</p>
+          <h2 data-draft-field="homePromo.title">{visitLeadTitle}</h2>
+          <p class="note visit-highlight-note" data-draft-field="homePromo.body">{visitLeadBody}</p>
+          {homePromo?.benefit && <p class="home-promo-benefit">{homePromo.benefit}</p>}
+          {homePromo?.disclaimer && <p class="note home-promo-disclaimer">{homePromo.disclaimer}</p>}
+          <div class="button-group visit-highlight-actions">
+            <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place">{home.visitPrimaryCtaLabel}</a>
+            <a class="button secondary" href={home.visitSecondaryCtaHref} data-draft-href="business.phoneHref">{home.visitSecondaryCtaLabel}</a>
+          </div>
         </div>
-      </div>
-      <div class="card-image-wrap hero-media-small">
-        <img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} data-draft-image="storeView" />
-        <div class="overlay-note">매장 외관 대표 이미지</div>
-      </div>
+
+        <div class="card-image-wrap hero-media-small visit-highlight-media">
+          <img src={selectedAssets.storeView.src} alt={selectedAssets.storeView.alt} data-draft-image="storeView" />
+          <div class="overlay-note">매장 외관 대표 이미지</div>
+        </div>
+      </article>
     </div>
   </section>
 </Layout>

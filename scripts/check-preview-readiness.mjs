@@ -7,9 +7,9 @@ const publicDir = join(root, 'public');
 const siteContent = JSON.parse(readFileSync(join(root, 'src/data/site-content.json'), 'utf8'));
 const assetManifest = JSON.parse(readFileSync(join(root, 'src/data/vine-asset-manifest.json'), 'utf8'));
 const visibleGalleryCount = assetManifest.gallery.filter((asset) => asset.visible !== false).length;
-const homeGalleryCount = Math.min(4, visibleGalleryCount);
+const homeGalleryCount = Math.min(6, visibleGalleryCount);
 const homePromoEnabled = siteContent.home?.promo?.enabled !== false;
-const homePhoneHrefCount = homePromoEnabled ? 3 : 2;
+const homePhoneHrefCount = 2;
 
 const pageChecks = [
   {

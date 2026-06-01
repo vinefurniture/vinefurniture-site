@@ -107,8 +107,8 @@
       "plannedSrc": "/images/vine/gallery/gallery-instagram-bed-01.jpg",
       "alt": "바인퍼니처 침실 스타일링 이미지",
       "source": "기존 vinefurniture.kr 공개 이미지 수집본",
-      "visible": false,
-      "order": 7
+      "visible": true,
+      "order": 6
     },
     {
       "key": "galleryInstagramSofa01",
