@@ -2,15 +2,33 @@
 interface Props {
   title: string;
   note?: string;
+  collapsible?: boolean;
+  open?: boolean;
 }
 
-const { title, note } = Astro.props;
+const { title, note, collapsible = false, open = true } = Astro.props;
 ---
 
-<section class="card admin-section-card">
-  <div class="admin-section-head">
-    <h2>{title}</h2>
-    {note && <p class="note">{note}</p>}
-  </div>
-  <slot />
-</section>
+{
+  collapsible ? (
+    <details class="card admin-section-card admin-section-collapsible" open={open}>
+      <summary class="admin-section-summary">
+        <div class="admin-section-head">
+          <h2>{title}</h2>
+          {note && <p class="note">{note}</p>}
+        </div>
+      </summary>
+      <div class="admin-section-body">
+        <slot />
+      </div>
+    </details>
+  ) : (
+    <section class="card admin-section-card">
+      <div class="admin-section-head">
+        <h2>{title}</h2>
+        {note && <p class="note">{note}</p>}
+      </div>
+      <slot />
+    </section>
+  )
+}

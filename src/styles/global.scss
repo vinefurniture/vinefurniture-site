@@ -725,8 +725,70 @@ button {
   margin-bottom: 1rem;
 }
 
+.admin-section-card {
+  overflow: clip;
+}
+
 .admin-section-head p {
   margin-bottom: 0;
+}
+
+.admin-section-collapsible {
+  gap: 0;
+}
+
+.admin-section-summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.admin-section-summary::-webkit-details-marker {
+  display: none;
+}
+
+.admin-section-summary .admin-section-head {
+  position: relative;
+  margin-bottom: 0;
+  padding-right: 2rem;
+}
+
+.admin-section-summary .admin-section-head::after {
+  content: '+';
+  position: absolute;
+  top: 0.1rem;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.admin-section-collapsible[open] .admin-section-head {
+  margin-bottom: 1rem;
+}
+
+.admin-section-collapsible[open] .admin-section-head::after {
+  content: '–';
+}
+
+.admin-section-body {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.admin-summary-block-highlight {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #eadbc3;
+  background: #fff8ef;
 }
 
 .admin-field {
@@ -861,6 +923,25 @@ button {
   border: 1px solid var(--color-border);
 }
 
+.admin-quick-priority-box,
+.admin-guide-priority-box {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #eadbc3;
+  background: #fff8ef;
+}
+
+.admin-quick-priority-box strong,
+.admin-guide-priority-box strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.admin-quick-priority-box p,
+.admin-guide-priority-box p {
+  margin: 0;
+}
+
 .admin-guide-mini-card p,
 .admin-guide-link-text {
   margin-top: 0.5rem;
@@ -972,6 +1053,12 @@ button {
   .admin-guide-print-note {
     padding: 0.6rem 0.8rem;
     background: #f5f1ea;
+  }
+
+  .admin-quick-priority-box,
+  .admin-guide-priority-box {
+    padding: 0.65rem 0.8rem;
+    background: #fbf6ee;
   }
 
   .admin-guide-step-grid,
