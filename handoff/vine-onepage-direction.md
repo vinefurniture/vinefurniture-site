@@ -109,9 +109,9 @@ Current preferred order for this project:
 
 ## Conversion hierarchy
 Every main screen should keep the conversion actions obvious:
-- **Primary:** 전화 문의
-- **Secondary:** 오시는 길 / 네이버 지도
-- **Tertiary:** 인스타그램 보기
+- **Primary:** 네이버 플레이스로 방문 예약 / 전화 문의하기
+- **Secondary:** 최근 사진 보기 (`/gallery`)
+- **Tertiary:** 인스타그램에서 직접 열기
 
 If there are too many equal-weight buttons, conversion weakens.
 

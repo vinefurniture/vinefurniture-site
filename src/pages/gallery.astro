@@ -23,7 +23,7 @@ const galleryPreviewAssets = galleryAssets.slice(0, 6);
         <article class="gallery-summary-card">
           <span class="gallery-summary-label">운영 방식</span>
           <strong>인스타 피드 중심</strong>
-          <p>최신 사진 업데이트는 인스타그램에서 먼저 반영하고, 사이트 갤러리는 그 흐름을 바로 보여주는 방식으로 정리했습니다.</p>
+          <p>최신 사진은 인스타그램에서 먼저 올리고, 이 페이지에서는 그 흐름을 바로 확인하실 수 있게 정리했습니다.</p>
         </article>
 
         <article class="gallery-summary-card gallery-summary-card--wide">
@@ -31,15 +31,15 @@ const galleryPreviewAssets = galleryAssets.slice(0, 6);
           <div class="chip-row">
             {categoryLabels.map((label) => <span class="chip">{label}</span>)}
           </div>
-          <p>침대, 소파, 식탁, 매장 분위기를 인스타 피드에서 먼저 확인하시고, 마음에 드는 스타일이 있으면 전화 또는 방문 상담으로 바로 이어가실 수 있습니다.</p>
+          <p>침대, 소파, 식탁, 매장 분위기를 먼저 살펴보시고 마음에 드는 스타일이 있으면 바로 문의하실 수 있습니다.</p>
         </article>
       </div>
 
       <section class="instagram-feed-panel" aria-labelledby="instagram-feed-title">
         <div class="instagram-feed-copy">
           <p class="eyebrow">Instagram Feed</p>
-          <h2 id="instagram-feed-title">최근 사진은 인스타그램 피드에서 바로 확인해보세요.</h2>
-          <p class="note">인스타그램에 새 사진을 올리면 이 페이지에서도 같은 피드 흐름으로 확인할 수 있게 구성했습니다. 운영은 인스타그램 중심으로 단순화하고, 사이트는 방문/문의 전환에 집중합니다.</p>
+          <h2 id="instagram-feed-title">최근 사진은 여기서 바로 확인해보세요.</h2>
+          <p class="note">새 사진은 인스타그램에 먼저 올리고, 이 페이지에서는 같은 흐름을 바로 볼 수 있게 구성했습니다. 마음에 드는 스타일이 보이면 방문 예약이나 전화 문의로 이어가시면 됩니다.</p>
           <div class="button-group instagram-feed-actions">
             <a class="button" href={instagramProfileUrl} target="_blank" rel="noreferrer" data-draft-href="business.instagram">인스타그램에서 직접 열기</a>
             <a class="button secondary" href={siteMeta.place} target="_blank" rel="noreferrer" data-draft-href="business.place">네이버 플레이스로 방문 예약</a>
@@ -61,7 +61,7 @@ const galleryPreviewAssets = galleryAssets.slice(0, 6);
         <div class="gallery-secondary-head">
           <p class="eyebrow">Showroom Highlights</p>
           <h2 id="gallery-curated-title">대표 쇼룸 사진도 함께 확인해보세요.</h2>
-          <p class="note">인스타 피드 아래에는 사이트용 대표컷만 간단히 다시 정리했습니다. 상담 시 자주 보여드리는 핵심 분위기 위주로만 남겨두었습니다.</p>
+          <p class="note">인스타 피드 아래에는 상담 때 자주 보여드리는 대표 컷만 간단히 정리해두었습니다.</p>
         </div>
 
         <div class="grid-4 gallery-grid gallery-grid-secondary" data-draft-gallery-container="gallery">
@@ -87,7 +87,7 @@ const galleryPreviewAssets = galleryAssets.slice(0, 6);
         </div>
         <div class="button-group cta-panel-actions">
           <a class="button" href={siteMeta.phoneHref} data-draft-href="business.phoneHref">전화 문의하기</a>
-          <a class="button secondary" href={siteMeta.place} target="_blank" rel="noreferrer" data-draft-href="business.place">네이버 플레이스에서 위치 보기</a>
+          <a class="button secondary" href={siteMeta.place} target="_blank" rel="noreferrer" data-draft-href="business.place">네이버 플레이스로 방문 예약</a>
         </div>
       </div>
     </div>

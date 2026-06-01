@@ -46,7 +46,7 @@
     "heroBody": "공장 직영 가구를 합리적인 가격으로 만나보세요. 침대, 소파, 식탁까지 매장에서 직접 보고 편하게 상담받으실 수 있습니다.",
     "heroPrimaryCtaLabel": "전화 문의하기",
     "heroPrimaryCtaHref": "tel:0313121051",
-    "heroSecondaryCtaLabel": "네이버 플레이스에서 위치 보기",
+    "heroSecondaryCtaLabel": "네이버 플레이스로 방문 예약",
     "heroSecondaryCtaHref": "https://naver.me/xlb3Zq7H",
     "aboutTitle": "바인퍼니처는 어떤 곳인가요?",
     "aboutBody": "30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점입니다. 좋은 소재와 오래 쓸 수 있는 품질의 가구를 합리적인 가격으로 제안합니다.",
@@ -74,7 +74,7 @@
     "galleryNote": "침대, 소파, 식탁, 매장 전경까지 대표 이미지를 먼저 둘러보시고 편하게 상담받아보세요.",
     "promo": {
       "enabled": true,
-      "eyebrow": "VISIT EVENT",
+      "eyebrow": "방문 안내",
       "title": "방문 전 보고 싶은 제품을 먼저 정하고 편하게 예약해보세요",
       "body": "최근 사진은 갤러리에서 먼저 확인하시고, 마음에 드는 침대·소파·식탁이 있으면 네이버 플레이스로 방문 예약 또는 전화 문의를 남겨주세요. 방문 전 연락 주시면 상담 동선을 미리 준비해드립니다."
     },
@@ -114,10 +114,10 @@
   },
   "galleryPage": {
     "title": "갤러리 | 바인퍼니처",
-    "description": "바인퍼니처의 최근 사진은 인스타그램 피드 중심으로 확인하고, 대표 쇼룸 이미지는 사이트에서 함께 둘러보실 수 있습니다.",
+    "description": "바인퍼니처의 최근 사진과 대표 쇼룸 이미지를 한곳에서 확인하고, 바로 방문 예약이나 문의로 이어가실 수 있습니다.",
     "eyebrow": "Gallery",
-    "heroTitle": "최근 사진은 인스타그램 피드 중심으로 먼저 만나보세요.",
-    "heroNote": "운영은 인스타그램 중심으로 단순화하고, 사이트에서는 대표 쇼룸 이미지와 방문/문의 동선을 함께 정리했습니다. 최신 분위기를 먼저 확인하신 뒤 편하게 상담으로 이어가실 수 있습니다."
+    "heroTitle": "최근 사진과 대표 쇼룸 컷을 한 번에 확인해보세요.",
+    "heroNote": "최신 분위기는 인스타그램 피드에서 바로 확인하시고, 아래 대표 쇼룸 컷까지 가볍게 둘러본 뒤 방문 예약이나 전화 문의로 이어가실 수 있도록 정리했습니다."
   },
   "locationPage": {
     "title": "오시는 길 | 바인퍼니처",
@@ -125,9 +125,9 @@
     "eyebrow": "Location",
     "heroTitle": "매장에서 직접 확인해보세요",
     "heroBody": "가구는 직접 보고 비교할수록 더 만족스럽습니다. 방문 전 연락 주시면 더 편하게 안내해드립니다.",
-    "primaryCtaLabel": "네이버 플레이스 열기",
+    "primaryCtaLabel": "네이버 플레이스로 방문 예약",
     "primaryCtaHref": "https://naver.me/xlb3Zq7H",
-    "secondaryCtaLabel": "전화로 문의하기",
+    "secondaryCtaLabel": "전화 문의하기",
     "secondaryCtaHref": "tel:0313121051",
     "memoTitle": "방문 안내 메모",
     "notes": [
@@ -147,14 +147,14 @@
   },
   "contactPage": {
     "title": "문의 | 바인퍼니처",
-    "description": "바인퍼니처 제품 상담, 방문 상담, 공간 스타일 상담은 전화와 인스타그램을 통해 편하게 문의하실 수 있습니다.",
+    "description": "바인퍼니처 제품 상담과 방문 문의는 전화로 바로 연결하고, 최근 사진은 갤러리에서 편하게 확인하실 수 있습니다.",
     "eyebrow": "Contact",
     "heroTitle": "편하게 문의하시고 매장에서 직접 확인해보세요.",
-    "heroBody": "제품이나 공간에 맞는 가구가 고민되신다면 편하게 문의해주세요. 방문 전 연락 주시면 더 편하게 안내해드립니다.",
-    "primaryCtaLabel": "지금 전화 문의하기",
+    "heroBody": "제품이나 공간에 맞는 가구가 고민되신다면 편하게 문의해주세요. 최근 사진을 먼저 보고 오시면 상담이 더 빠르고 편해집니다.",
+    "primaryCtaLabel": "전화 문의하기",
     "primaryCtaHref": "tel:0313121051",
-    "secondaryCtaLabel": "인스타그램 보기",
-    "secondaryCtaHref": "https://www.instagram.com/vinefurniture/",
+    "secondaryCtaLabel": "최근 사진 보기",
+    "secondaryCtaHref": "/gallery",
     "cards": [
       {
         "title": "전화 상담",

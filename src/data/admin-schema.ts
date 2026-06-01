@@ -49,10 +49,10 @@ export const adminCopyFields: AdminFieldDef[] = [
 ];
 
 export const adminPromoFields: AdminFieldDef[] = [
-  { name: 'homePromo.enabled', label: '홈에서 이벤트 프로모션 보이기', type: 'checkbox', hint: '체크를 끄면 메인 페이지에서 이벤트 안내가 숨겨집니다.' },
-  { name: 'homePromo.eyebrow', label: '이벤트 작은 제목', hint: '예: EVENT PROMOTION' },
-  { name: 'homePromo.title', label: '이벤트 제목', rows: 3, type: 'textarea', hint: '짧고 바로 이해되는 문장으로 적어주세요.' },
-  { name: 'homePromo.body', label: '이벤트 안내문', rows: 4, type: 'textarea', hint: '방문 유도나 상담 안내를 짧게 적어주세요.' },
+  { name: 'homePromo.enabled', label: '홈에서 방문 안내 보이기', type: 'checkbox', hint: '체크를 끄면 메인 페이지에서 방문 안내가 숨겨집니다.' },
+  { name: 'homePromo.eyebrow', label: '작은 제목', hint: '예: 방문 안내' },
+  { name: 'homePromo.title', label: '방문 안내 제목', rows: 3, type: 'textarea', hint: '짧고 바로 이해되는 문장으로 적어주세요.' },
+  { name: 'homePromo.body', label: '방문 안내문', rows: 4, type: 'textarea', hint: '방문 유도나 상담 안내를 짧게 적어주세요.' },
 ];
 
 export const adminImageSlots: AdminImageSlotDef[] = [
@@ -110,7 +110,7 @@ export const adminDefaults: AdminDraft = {
   },
   homePromo: {
     enabled: pageContent.home.promo?.enabled !== false,
-    eyebrow: pageContent.home.promo?.eyebrow ?? 'EVENT PROMOTION',
+    eyebrow: pageContent.home.promo?.eyebrow ?? '방문 안내',
     title: pageContent.home.promo?.title ?? '',
     body: pageContent.home.promo?.body ?? '',
   },
