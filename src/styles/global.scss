@@ -644,18 +644,40 @@ p {
 
 
 .home-promo-benefit {
+  display: grid;
+  gap: 0.35rem;
   margin: 0;
-  padding: 0.85rem 1rem;
+  padding: 0.95rem 1.05rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(220, 194, 171, 0.9);
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(196, 151, 104, 0.62);
+  border-left: 4px solid #c9955c;
+  box-shadow: 0 10px 24px rgba(126, 88, 49, 0.08);
   line-height: 1.45;
   max-width: 58ch;
 }
 
+.home-promo-benefit p {
+  margin: 0;
+  font-weight: 800;
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.home-promo-benefit-label {
+  width: fit-content;
+  border-radius: 999px;
+  background: #f2deca;
+  color: #6f4723;
+  padding: 0.22rem 0.62rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
 .home-promo-disclaimer {
   max-width: 56ch;
+  font-size: 0.9rem;
 }
 
 .home-promo-actions {

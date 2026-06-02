@@ -67,7 +67,12 @@ const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homeProm
           <p class="eyebrow" data-draft-field="homePromo.eyebrow">{visitLeadEyebrow}</p>
           <h2 data-draft-field="homePromo.title">{visitLeadTitle}</h2>
           <p class="note visit-highlight-note" data-draft-field="homePromo.body">{visitLeadBody}</p>
-          {homePromo?.benefit && <p class="home-promo-benefit">{homePromo.benefit}</p>}
+          {homePromo?.benefit && (
+            <div class="home-promo-benefit" aria-label="방문 혜택">
+              <span class="home-promo-benefit-label">방문 혜택</span>
+              <p>{homePromo.benefit}</p>
+            </div>
+          )}
           {homePromo?.disclaimer && <p class="note home-promo-disclaimer">{homePromo.disclaimer}</p>}
           <div class="button-group visit-highlight-actions">
             <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place" data-analytics-event="click_naver_place" data-analytics-label="home_visit_naver_place">{home.visitPrimaryCtaLabel}</a>
