@@ -18,6 +18,7 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, siteMeta.siteUrl).toString();
 const socialImageUrl = new URL(ogImage, siteMeta.siteUrl).toString();
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -52,8 +53,22 @@ const socialImageUrl = new URL(ogImage, siteMeta.siteUrl).toString();
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="twitter:image:alt" content={siteMeta.socialImageAlt} />
 
+    {gaMeasurementId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+        <script define:vars={{ gaMeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        </script>
+      </>
+    )}
+
     <title>{title}</title>
     <script src="/admin/admin-preview.js" defer></script>
+    <script src="/scripts/analytics-events.js" defer></script>
   </head>
   <body>
     <Header />

@@ -149,6 +149,20 @@ main {
   background: var(--color-accent-strong);
 }
 
+.hero-trust-line {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0.35rem 0 0;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(220, 194, 171, 0.85);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.85);
+  color: #4a4038;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .hero,
 .section {
   padding: 5rem 0;
@@ -1360,6 +1374,7 @@ button {
 
   .gallery-summary-grid,
   .cta-panel,
+  .visit-highlight-panel,
   .instagram-feed-panel {
     grid-template-columns: 1fr;
   }
@@ -1371,6 +1386,15 @@ button {
 
   .recent-feed-section-head {
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .recent-feed-actions {
+    justify-content: flex-start;
+  }
+
+  .visit-highlight-media img {
+    min-height: 16rem;
   }
 
   .instagram-feed-frame-wrap,
@@ -1574,9 +1598,28 @@ button {
   }
 
   .button,
-  .button.secondary,
-  .header-cta {
+  .button.secondary {
     width: 100%;
+  }
+
+  .header-cta {
+    width: auto;
+    max-width: none;
+    flex-shrink: 0;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .brand {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .brand-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .admin-action-buttons .button,

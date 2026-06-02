@@ -35,23 +35,23 @@
     }
   ],
   "home": {
-    "title": "바인퍼니처 | 30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점",
-    "description": "30년 경력의 가구 장인이 직접 운영하는 바인퍼니처에서 침대, 소파, 식탁 등 공장 직영 가구를 합리적인 가격으로 만나보세요.",
+    "title": "바인퍼니처 | 시흥 신천동 공장 직영 가구 전문점",
+    "description": "시흥 신천동 30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점 바인퍼니처. 침대, 소파, 식탁을 매장에서 직접 보고 상담받아보세요.",
     "eyebrow": "Vine Furniture",
-    "heroTitle": "30년 경력의 가구 장인이 직접 운영하는 바인퍼니처",
-    "heroBody": "공장 직영 가구를 합리적인 가격으로 만나보세요. 침대, 소파, 식탁까지 매장에서 직접 보고 편하게 상담받으실 수 있습니다.",
-    "heroPrimaryCtaLabel": "전화 문의하기",
+    "heroTitle": "시흥 신천동 공장 직영 가구 전문점, 바인퍼니처",
+    "heroBody": "30년 경력의 가구 장인이 침대, 소파, 식탁을 직접 상담합니다. 매장에서 실제 제품을 보고 합리적인 가격으로 비교해보세요.",
+    "heroPrimaryCtaLabel": "전화로 상담하기",
     "heroPrimaryCtaHref": "tel:0313121051",
-    "heroSecondaryCtaLabel": "네이버 플레이스로 방문 예약",
+    "heroSecondaryCtaLabel": "위치/예약 보기",
     "heroSecondaryCtaHref": "https://naver.me/xlb3Zq7H",
     "aboutTitle": "바인퍼니처는 어떤 곳인가요?",
-    "aboutBody": "30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점입니다. 좋은 소재와 오래 쓸 수 있는 품질의 가구를 합리적인 가격으로 제안합니다.",
+    "aboutBody": "시흥 신천동에서 30년 경력의 가구 장인이 직접 운영하는 공장 직영 가구 전문점입니다. 좋은 소재와 오래 쓸 수 있는 품질의 가구를 합리적인 가격으로 제안하고, 네이버 방문자 리뷰와 블로그 후기로 매장 상담 경험을 확인하실 수 있습니다.",
     "infoTitle": "매장 기본 정보",
     "strengthTitle": "핵심 강점",
     "strengths": [
       {
         "title": "30년 경력의 노하우",
-        "body": "오랜 경험을 바탕으로 공간과 용도에 맞는 가구를 제안합니다."
+        "body": "침대, 소파, 식탁을 공간과 예산에 맞춰 직접 상담합니다."
       },
       {
         "title": "공장 직영 시스템",
@@ -59,34 +59,35 @@
       },
       {
         "title": "합리적인 가격",
-        "body": "품질은 지키고 가격 부담은 낮춘 가구를 만나보실 수 있습니다."
+        "body": "타 가구점 견적과 비교해도 납득할 수 있는 가격을 지향합니다."
       },
       {
         "title": "직접 상담 가능",
-        "body": "원하는 스타일과 공간에 맞춰 편하게 상담해드립니다."
+        "body": "방문 전 연락 주시면 원하는 제품과 예산에 맞춰 상담을 준비합니다."
       }
     ],
-    "galleryTitle": "최근 사진으로 매장 분위기를 살펴보세요",
+    "galleryTitle": "인스타그램에서 최근 매장 분위기를 더 확인해보세요",
     "galleryNote": "홈에서 인스타그램 최근 피드를 바로 확인하고, 더 자세한 업데이트는 인스타그램에서 그대로 이어 보실 수 있게 정리했습니다.",
-    "recentFeedEyebrow": "Recent Updates",
-    "recentFeedTitle": "최근 분위기는 홈에서 바로 확인해보세요",
+    "recentFeedEyebrow": "Instagram Updates",
+    "recentFeedTitle": "인스타그램 최근 소식",
     "recentFeedBody": "별도 갤러리보다 최근 사진 흐름을 우선 보여드리고, 더 자세한 업데이트는 인스타그램에서 바로 이어 보실 수 있게 정리했습니다.",
-    "recentFeedPrimaryCtaLabel": "인스타그램 직접 열기",
+    "recentFeedPrimaryCtaLabel": "인스타그램 열기",
     "recentFeedPrimaryCtaHref": "https://www.instagram.com/vinefurniture/",
     "promo": {
       "enabled": true,
       "eyebrow": "방문 안내",
-      "title": "마음에 드는 분위기라면 편하게 방문 예약해보세요",
-      "body": "최근 사진에서 원하는 분위기나 제품을 살펴보신 뒤 네이버 플레이스 예약 또는 전화 문의로 편하게 방문 일정을 잡아보세요. 미리 연락 주시면 상담도 더 차분하게 준비해드립니다.",
+      "title": "마음에 드는 가구가 있다면 먼저 위치와 방문 시간을 확인해보세요",
+      "body": "시흥 신천동 매장에서 침대, 소파, 식탁을 직접 보고 상담받으실 수 있습니다. 방문 전 네이버 예약 또는 전화로 연락 주시면 상담을 더 차분하게 준비해드립니다.",
       "benefit": "최근 1개월 이내 타 가구점 견적서를 지참해 방문하시면 7만원 상당의 메모리폼 베개 1개를 드립니다.",
       "disclaimer": "프로모션은 매장 운영 상황에 따라 변경되거나 종료될 수 있으니, 방문 전 예약 또는 전화로 한 번 확인해주세요."
     },
-    "visitTitle": "매장에서 직접 확인해보세요",
-    "visitBody": "가구는 직접 보고 비교할수록 더 만족스럽습니다. 바인퍼니처 매장에서 편하게 둘러보시고 상담받아보세요.",
-    "visitPrimaryCtaLabel": "네이버 플레이스로 방문 예약",
+    "visitTitle": "시흥 신천동 매장에서 직접 확인해보세요",
+    "visitBody": "가구는 사진보다 직접 보고 비교할수록 만족도가 높습니다. 위치를 확인하고 방문 전 전화로 편하게 문의해보세요.",
+    "visitPrimaryCtaLabel": "위치/예약 보기",
     "visitPrimaryCtaHref": "https://naver.me/xlb3Zq7H",
-    "visitSecondaryCtaLabel": "전화 문의하기",
-    "visitSecondaryCtaHref": "tel:0313121051"
+    "visitSecondaryCtaLabel": "전화로 상담하기",
+    "visitSecondaryCtaHref": "tel:0313121051",
+    "heroTrustLine": "네이버 방문자 리뷰 62개 · 블로그 리뷰 411개 · 매일 10:00~19:00 운영"
   },
   "brand": {
     "title": "브랜드 소개 | 바인퍼니처",
@@ -126,11 +127,11 @@
     "title": "오시는 길 | 바인퍼니처",
     "description": "경기 시흥시 바인퍼니처 매장 위치, 운영시간, 방문 전 확인하면 좋은 안내 정보를 확인해보세요.",
     "eyebrow": "Location",
-    "heroTitle": "매장에서 직접 확인해보세요",
-    "heroBody": "가구는 직접 보고 비교할수록 더 만족스럽습니다. 방문 전 연락 주시면 더 편하게 안내해드립니다.",
-    "primaryCtaLabel": "네이버 플레이스로 방문 예약",
+    "heroTitle": "시흥 신천동 매장 위치를 확인해보세요",
+    "heroBody": "경기 시흥시 수인로3488번길 1 지층에 있는 바인퍼니처 매장입니다. 방문 전 연락 주시면 상담 준비와 위치 안내를 더 편하게 도와드립니다.",
+    "primaryCtaLabel": "위치/예약 보기",
     "primaryCtaHref": "https://naver.me/xlb3Zq7H",
-    "secondaryCtaLabel": "전화 문의하기",
+    "secondaryCtaLabel": "전화로 상담하기",
     "secondaryCtaHref": "tel:0313121051",
     "memoTitle": "방문 안내 메모",
     "notes": [
@@ -144,7 +145,7 @@
       },
       {
         "title": "첫 방문 고객 안내",
-        "body": "매장에서 침대, 소파, 식탁 대표 제품을 직접 비교해보실 수 있습니다. 궁금한 스타일이나 예산을 미리 알려주시면 상담이 더 수월합니다."
+        "body": "매장에서 침대, 소파, 식탁 대표 제품을 직접 비교해보실 수 있습니다. 궁금한 스타일, 예산, 타 가구점 견적서를 미리 알려주시면 상담이 더 수월합니다."
       }
     ]
   },
@@ -152,9 +153,9 @@
     "title": "문의 | 바인퍼니처",
     "description": "바인퍼니처 제품 상담과 방문 문의는 전화로 바로 연결하고, 최근 사진은 홈에서 편하게 확인하실 수 있습니다.",
     "eyebrow": "Contact",
-    "heroTitle": "편하게 문의하시고 매장에서 직접 확인해보세요.",
-    "heroBody": "제품이나 공간에 맞는 가구가 고민되신다면 편하게 문의해주세요. 홈의 최근 사진을 먼저 보고 오시면 상담이 더 빠르고 편해집니다.",
-    "primaryCtaLabel": "전화 문의하기",
+    "heroTitle": "전화로 문의하고 시흥 신천동 매장에서 직접 확인해보세요.",
+    "heroBody": "제품이나 공간에 맞는 가구가 고민되신다면 먼저 전화로 편하게 문의해주세요. 방문 전 원하는 스타일과 예산을 알려주시면 상담이 더 빠르고 편해집니다.",
+    "primaryCtaLabel": "전화로 상담하기",
     "primaryCtaHref": "tel:0313121051",
     "secondaryCtaLabel": "최근 사진 보기",
     "secondaryCtaHref": "/#recent-feed",
@@ -165,7 +166,7 @@
       },
       {
         "title": "상담 가능 내용",
-        "body": "제품 상담 · 방문 상담 · 공간/스타일 상담"
+        "body": "제품 상담 · 방문 상담 · 공간/스타일 상담 · 견적 비교 상담"
       },
       {
         "title": "외부 채널",
@@ -174,4 +175,3 @@
     ]
   }
 }
-
