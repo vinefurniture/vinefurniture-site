@@ -25,6 +25,8 @@ export type AdminDraft = {
     eyebrow: string;
     title: string;
     body: string;
+    benefit: string;
+    disclaimer: string;
   };
   locationPage: {
     heroBody: string;

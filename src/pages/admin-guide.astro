@@ -23,7 +23,7 @@ const contactPage = pageContent.contact;
           </div>
         </div>
 
-        <p class="admin-guide-print-note">이 종이 한 장만 보고도 전화, 운영시간, 주소, 링크, 문구와 현재 쓰는 대표 사진을 어디서 바꾸는지 다시 확인할 수 있습니다.</p>
+        <p class="admin-guide-print-note">이 종이 한 장만 보고도 전화, 운영시간, 주소, 방문 안내/혜택, 링크, 문구와 현재 쓰는 대표 사진을 어디서 바꾸는지 다시 확인할 수 있습니다.</p>
 
         <div class="admin-guide-priority-box">
           <strong>제일 쉬운 사용법</strong>
@@ -53,7 +53,7 @@ const contactPage = pageContent.contact;
             <li>전화번호</li>
             <li>운영시간</li>
             <li>주소</li>
-            <li>방문 안내 제목 / 안내문</li>
+            <li>방문 안내 제목 / 안내문 / 혜택 문구</li>
             <li>메인 / 오시는 길 / 문의 문구</li>
           </ol>
         </article>
@@ -113,6 +113,10 @@ npm run preview:check</pre>
         <article class="card admin-guide-step-card">
           <h2 class="admin-guide-card-title">현재 방문 안내 제목</h2>
           <p class="note admin-guide-copy-text">{home.promo?.enabled !== false ? home.promo?.title : '현재 숨김 상태'}</p>
+        </article>
+        <article class="card admin-guide-step-card">
+          <h2 class="admin-guide-card-title">현재 방문 혜택</h2>
+          <p class="note admin-guide-copy-text">{home.promo?.enabled !== false ? home.promo?.benefit : '현재 숨김 상태'}</p>
         </article>
         <article class="card admin-guide-step-card">
           <h2 class="admin-guide-card-title">오시는 길 안내문</h2>

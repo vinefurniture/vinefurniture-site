@@ -53,6 +53,8 @@ export const adminPromoFields: AdminFieldDef[] = [
   { name: 'homePromo.eyebrow', label: '작은 제목', hint: '예: 방문 안내' },
   { name: 'homePromo.title', label: '방문 안내 제목', rows: 3, type: 'textarea', hint: '짧고 바로 이해되는 문장으로 적어주세요.' },
   { name: 'homePromo.body', label: '방문 안내문', rows: 4, type: 'textarea', hint: '방문 유도나 상담 안내를 짧게 적어주세요.' },
+  { name: 'homePromo.benefit', label: '방문 혜택 문구', rows: 3, type: 'textarea', hint: '예: 견적서 지참 시 혜택처럼 조건을 정확히 적어주세요.' },
+  { name: 'homePromo.disclaimer', label: '혜택 확인 안내', rows: 3, type: 'textarea', hint: '방문 전 확인, 재고, 종료 가능성 등 오해 방지 문구입니다.' },
 ];
 
 export const adminImageSlots: AdminImageSlotDef[] = [
@@ -113,6 +115,8 @@ export const adminDefaults: AdminDraft = {
     eyebrow: pageContent.home.promo?.eyebrow ?? '방문 안내',
     title: pageContent.home.promo?.title ?? '',
     body: pageContent.home.promo?.body ?? '',
+    benefit: pageContent.home.promo?.benefit ?? '',
+    disclaimer: pageContent.home.promo?.disclaimer ?? '',
   },
   locationPage: {
     heroBody: pageContent.location.heroBody,

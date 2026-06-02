@@ -70,10 +70,10 @@ const visitLeadBody = homePromo?.enabled !== false && homePromo?.body ? homeProm
           {homePromo?.benefit && (
             <div class="home-promo-benefit" aria-label="방문 혜택">
               <span class="home-promo-benefit-label">방문 혜택</span>
-              <p>{homePromo.benefit}</p>
+              <p data-draft-field="homePromo.benefit">{homePromo.benefit}</p>
             </div>
           )}
-          {homePromo?.disclaimer && <p class="note home-promo-disclaimer">{homePromo.disclaimer}</p>}
+          {homePromo?.disclaimer && <p class="note home-promo-disclaimer" data-draft-field="homePromo.disclaimer">{homePromo.disclaimer}</p>}
           <div class="button-group visit-highlight-actions">
             <a class="button" href={home.visitPrimaryCtaHref} target="_blank" rel="noreferrer" data-draft-href="business.place" data-analytics-event="click_naver_place" data-analytics-label="home_visit_naver_place">{home.visitPrimaryCtaLabel}</a>
             <a class="button secondary" href={home.visitSecondaryCtaHref} data-draft-href="business.phoneHref" data-analytics-event="click_call" data-analytics-label="home_visit_call">{home.visitSecondaryCtaLabel}</a>

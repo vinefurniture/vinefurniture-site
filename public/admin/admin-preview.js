@@ -105,6 +105,8 @@
     setText('[data-draft-field="homePromo.eyebrow"]', draft.homePromo?.eyebrow);
     setText('[data-draft-field="homePromo.title"]', draft.homePromo?.title);
     setHtml('[data-draft-field="homePromo.body"]', draft.homePromo?.body);
+    setHtml('[data-draft-field="homePromo.benefit"]', draft.homePromo?.benefit);
+    setHtml('[data-draft-field="homePromo.disclaimer"]', draft.homePromo?.disclaimer);
     setText('[data-draft-field="locationPage.heroBody"]', draft.locationPage?.heroBody);
     setText('[data-draft-field="contactPage.heroBody"]', draft.contactPage?.heroBody);
 

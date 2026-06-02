@@ -57,12 +57,16 @@ nextSiteContent.business.place = payload.business.place;
 nextSiteContent.home.heroTitle = payload.home.heroTitle;
 nextSiteContent.home.heroBody = payload.home.heroBody;
 nextSiteContent.home.heroPrimaryCtaHref = phoneHref;
-nextSiteContent.home.visitSecondaryCtaHref = payload.business.place;
+nextSiteContent.home.heroSecondaryCtaHref = payload.business.place;
+nextSiteContent.home.visitPrimaryCtaHref = payload.business.place;
+nextSiteContent.home.visitSecondaryCtaHref = phoneHref;
 nextSiteContent.home.promo = {
   enabled: payload.homePromo.enabled !== false,
   eyebrow: payload.homePromo.eyebrow,
   title: payload.homePromo.title,
   body: payload.homePromo.body,
+  benefit: payload.homePromo.benefit ?? siteContent.home?.promo?.benefit ?? '',
+  disclaimer: payload.homePromo.disclaimer ?? siteContent.home?.promo?.disclaimer ?? '',
 };
 
 nextSiteContent.locationPage.heroBody = payload.locationPage.heroBody;
@@ -72,7 +76,7 @@ nextSiteContent.locationPage.notes[0].body = `${payload.business.address}\n${pay
 
 nextSiteContent.contactPage.heroBody = payload.contactPage.heroBody;
 nextSiteContent.contactPage.primaryCtaHref = phoneHref;
-nextSiteContent.contactPage.secondaryCtaHref = payload.business.instagram;
+nextSiteContent.contactPage.secondaryCtaHref = '/#recent-feed';
 nextSiteContent.contactPage.cards[0].body = payload.business.phone;
 
 const galleryMap = new Map(payload.gallery.map((item, index) => [item.key, { visible: item.visible !== false, order: index + 1 }]));

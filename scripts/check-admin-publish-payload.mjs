@@ -39,6 +39,8 @@ const requiredStringFields = [
   ['homePromo.eyebrow', payload?.homePromo?.eyebrow],
   ['homePromo.title', payload?.homePromo?.title],
   ['homePromo.body', payload?.homePromo?.body],
+  ['homePromo.benefit', payload?.homePromo?.benefit],
+  ['homePromo.disclaimer', payload?.homePromo?.disclaimer],
   ['locationPage.heroBody', payload?.locationPage?.heroBody],
   ['contactPage.heroBody', payload?.contactPage?.heroBody],
 ];

@@ -23,6 +23,8 @@ const pageChecks = [
             { fragment: 'data-draft-field="homePromo.eyebrow"', label: 'home promo eyebrow binding' },
             { fragment: 'data-draft-field="homePromo.title"', label: 'home promo title binding' },
             { fragment: 'data-draft-field="homePromo.body"', label: 'home promo body binding' },
+            { fragment: 'data-draft-field="homePromo.benefit"', label: 'home promo benefit binding' },
+            { fragment: 'data-draft-field="homePromo.disclaimer"', label: 'home promo disclaimer binding' },
           ]
         : []),
       { fragment: 'data-draft-image="heroPrimary"', label: 'home hero image binding' },
@@ -125,6 +127,8 @@ const previewScriptChecks = [
   { fragment: 'setText(\'[data-draft-field="homePromo.eyebrow"]\'', label: 'homePromo.eyebrow text update' },
   { fragment: 'setText(\'[data-draft-field="homePromo.title"]\'', label: 'homePromo.title text update' },
   { fragment: 'setHtml(\'[data-draft-field="homePromo.body"]\'', label: 'homePromo.body html update' },
+  { fragment: 'setHtml(\'[data-draft-field="homePromo.benefit"]\'', label: 'homePromo.benefit html update' },
+  { fragment: 'setHtml(\'[data-draft-field="homePromo.disclaimer"]\'', label: 'homePromo.disclaimer html update' },
   { fragment: 'setText(\'[data-draft-field="locationPage.heroBody"]\'', label: 'locationPage.heroBody text update' },
   { fragment: 'setText(\'[data-draft-field="contactPage.heroBody"]\'', label: 'contactPage.heroBody text update' },
   { fragment: 'setImage(\'[data-draft-image="heroPrimary"]\'', label: 'heroPrimary image update' },
