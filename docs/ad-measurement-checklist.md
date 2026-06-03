@@ -4,15 +4,18 @@
 
 ## 1. 광고 시작 전 필수 설정
 
-### GA4
-- [ ] GA4 속성 생성
-- [ ] 웹 데이터 스트림 생성
-- [ ] 측정 ID 확인: `G-XXXXXXXXXX`
-- [ ] Vercel 환경변수에 설정
-  - 이름: `PUBLIC_GA_MEASUREMENT_ID`
-  - 값: GA4 측정 ID
-- [ ] Vercel 재배포
-- [ ] GA4 실시간 보고서에서 방문 수 확인
+### Google Tag Manager / GA4
+- [x] GTM 컨테이너 생성: `GTM-TWF4CHZX`
+- [x] 사이트 기본 GTM 설치 코드 반영
+- [ ] GTM에서 GA4 구성 태그 생성
+  - 태그 유형: Google 애널리틱스: GA4 구성
+  - 측정 ID: `G-XXXXXXXXXX`
+  - 트리거: All Pages
+- [ ] GTM에서 아래 클릭 이벤트용 GA4 이벤트 태그 생성
+- [ ] GTM 미리보기에서 `click_call`, `click_naver_place`, `click_instagram`, `click_naver_blog` 이벤트 확인
+- [ ] GTM 게시 후 GA4 실시간 보고서에서 방문 수와 클릭 이벤트 확인
+
+참고: 코드에는 `PUBLIC_GTM_CONTAINER_ID` 환경변수도 지원하지만, 현재 기본값은 `GTM-TWF4CHZX`입니다.
 
 ### 사이트 클릭 이벤트
 사이트에는 아래 이벤트를 보낼 준비가 되어 있습니다.

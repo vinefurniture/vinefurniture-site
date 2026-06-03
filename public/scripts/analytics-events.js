@@ -19,17 +19,23 @@
     if (!link) return;
 
     const eventName = resolveEventName(link);
-    if (!eventName || typeof window.gtag !== 'function') return;
+    if (!eventName) return;
 
     const href = link.getAttribute('href') || '';
     const label = link.dataset.analyticsLabel || link.textContent.trim().replace(/\s+/g, ' ');
-
-    window.gtag('event', eventName, {
+    const payload = {
       event_category: eventName === 'click_call' ? 'lead' : 'outbound',
       event_label: label,
       link_url: href,
       page_location: window.location.href,
-    });
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: eventName, ...payload });
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, payload);
+    }
   };
 
   document.addEventListener('click', trackClick, { capture: true });
